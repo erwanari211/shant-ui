@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    Select2
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="">Text Input</label>
+                      <input type="text"
+                        class="form-control" name="name" id="name" placeholder="Name">
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="normal-select">Select</label>
+                          <select class="form-control" name="normal-select" id="normal-select">
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Modern Select</label>
+                          <select class="form-control" id="select2-1"
+                          style="width: 100%">
+                            <option value="2">Option 1</option>
+                            <option value="14">Option 2</option>
+                            <option value="15">Option 3</option>
+                            <option value="16">Option 4</option>
+                            <option value="17">Option 5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Multiple Select / Tags</label>
+                      <select class="form-control" id="select2-2"
+                        multiple
+                        style="width: 100%">
+                        <option value="20">Option 1</option>
+                        <option selected value="4">Option 2</option>
+                        <option value="21">Option 3</option>
+                        <option value="22">Option 4</option>
+                        <option value="23">Option 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Group Select</label>
+                      <select class="form-control"
+                        id="select2-3"
+                        data-placeholder="Your Favorite Football Team"
+                        style="width: 100%">
+                        <option value="" value="7"></option>
+                        <optgroup label="NFC EAST" value="28">
+                          <option value="29">Dallas Cowboys</option>
+                          <option value="30">New York Giants</option>
+                          <option value="31">Philadelphia Eagles</option>
+                          <option value="32">Washington Redskins</option>
+                        </optgroup>
+                        <optgroup label="NFC NORTH" value="33">
+                          <option value="34">Chicago Bears</option>
+                          <option value="35">Detroit Lions</option>
+                          <option value="36">Green Bay Packers</option>
+                          <option value="37">Minnesota Vikings</option>
+                        </optgroup>
+                        <optgroup label="NFC SOUTH" value="38">
+                          <option value="39">Atlanta Falcons</option>
+                          <option value="40">Carolina Panthers</option>
+                          <option value="41">New Orleans Saints</option>
+                          <option value="42">Tampa Bay Buccaneers</option>
+                        </optgroup>
+                        <optgroup label="NFC WEST" value="43">
+                          <option value="44">Arizona Cardinals</option>
+                          <option value="45">St. Louis Rams</option>
+                          <option value="46">San Francisco 49ers</option>
+                          <option value="47">Seattle Seahawks</option>
+                        </optgroup>
+                        <optgroup label="AFC EAST" value="48">
+                          <option value="49">Buffalo Bills</option>
+                          <option value="50">Miami Dolphins</option>
+                          <option value="51">New England Patriots</option>
+                          <option value="52">New York Jets</option>
+                        </optgroup>
+                        <optgroup label="AFC NORTH" value="53">
+                          <option value="54">Baltimore Ravens</option>
+                          <option value="55">Cincinnati Bengals</option>
+                          <option value="56">Cleveland Browns</option>
+                          <option value="57">Pittsburgh Steelers</option>
+                        </optgroup>
+                        <optgroup label="AFC SOUTH" value="58">
+                          <option value="59">Houston Texans</option>
+                          <option value="60">Indianapolis Colts</option>
+                          <option value="61">Jacksonville Jaguars</option>
+                          <option value="62">Tennessee Titans</option>
+                        </optgroup>
+                        <optgroup label="AFC WEST" value="63">
+                          <option value="64">Denver Broncos</option>
+                          <option value="65">Kansas City Chiefs</option>
+                          <option value="66">Oakland Raiders</option>
+                          <option value="67">San Diego Chargers</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">Other content</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <p>
+                          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, perspiciatis.</span>
+                          <span>Repudiandae amet laudantium expedita consequatur cum voluptate sed doloribus maiores.</span>
+                          <span>A, laboriosam laborum debitis dolores enim et quibusdam beatae blanditiis.</span>
+                          <span>Sit tempore iure nisi vero aliquam, soluta a ab ea.</span>
+                          <span>Adipisci amet quia cupiditate odit id odio placeat quae vel.</span>
+                        </p>
+                        <p>
+                          <span>Provident obcaecati veritatis, voluptatem quia laboriosam vel placeat quos vitae!</span>
+                          <span>Omnis fuga adipisci non nisi veritatis et doloribus voluptatem esse.</span>
+                          <span>Eum porro temporibus corporis excepturi earum laudantium minima quo reiciendis!</span>
+                          <span>Eligendi odit labore repellat! Impedit illum blanditiis quo amet? Accusamus.</span>
+                          <span>Deleniti libero ea nesciunt unde minima iste eveniet consequatur minus?</span>
+                        </p>
+                        <p>
+                          <span>Optio impedit quia aliquid praesentium fugit eos, incidunt aut unde.</span>
+                          <span>Atque consequatur maiores sit earum debitis voluptatum, reiciendis est deleniti.</span>
+                          <span>Dignissimos aut maxime similique, autem consequuntur sunt facilis a blanditiis?</span>
+                          <span>Beatae doloremque cumque dolorem deleniti, assumenda quia doloribus. Odio, fugiat.</span>
+                          <span>Ipsa adipisci dignissimos quam reiciendis ex debitis necessitatibus voluptatum impedit.</span>
+                        </p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#select2-1').select2();
+        $('#select2-2').select2();
+        $('#select2-3').select2();
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
