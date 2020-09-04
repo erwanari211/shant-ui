@@ -1,0 +1,22 @@
+/**
+ * sidebar Light 2
+ * sidebar-light-2
+ */
+@if $sidebarTheme == 'sidebar-light-2' {
+  $custom-sidebar-bg: #fff;
+  $custom-sidebar-color: #777777;
+
+  $custom-sidebar-nav-title-color: #848484;
+
+  $custom-sidebar-nav-link-hover-bg: #e8e8e8;
+  $custom-sidebar-nav-link-hover-color: #000;
+
+  $custom-sidebar-nav-link-active-bg: #e8e8e8;
+  $custom-sidebar-nav-link-active-color: #000;
+
+  $custom-sidebar-nav-dropdown-bg: #fff;
+  $custom-sidebar-nav-dropdown-color: #777777;
+
+  $custom-sidebar-border-right: 1px solid #d2d6de;
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

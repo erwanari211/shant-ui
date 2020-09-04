@@ -1,0 +1,21 @@
+/**
+ * sidebar Dark 1
+ */
+@if $sidebarTheme == 'sidebar-dark-1' {
+  $custom-sidebar-bg: #0d1625;
+  $custom-sidebar-color: #d4d8de;
+
+  $custom-sidebar-nav-title-color: #848484;
+
+  $custom-sidebar-nav-link-hover-bg: #0d1625;
+  $custom-sidebar-nav-link-hover-color: #0080ff;
+
+  $custom-sidebar-nav-link-active-bg: #0d1625;
+  $custom-sidebar-nav-link-active-color: #0080ff;
+
+  $custom-sidebar-nav-dropdown-bg: #0d1625;
+  $custom-sidebar-nav-dropdown-color: #d4d8de;
+
+  $custom-sidebar-border-right: 1px solid #0d1625;
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

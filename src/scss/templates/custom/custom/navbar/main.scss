@@ -1,0 +1,12 @@
+// select theme
+$navbarTheme: 'navbar-dark-blue';
+
+// import themes
+@import "themes";
+
+// variable overrides
+@import "overrides";
+
+// import component
+@import "../../bootstrap/_navbar";
+@import "../../coreui/_navbar";

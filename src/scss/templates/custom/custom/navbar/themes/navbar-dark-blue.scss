@@ -1,0 +1,19 @@
+/**
+ * Dark Navbar
+ */
+@if $navbarTheme == 'navbar-dark-blue' {
+  $custom-navbar-bg: rgb(60,141,188); // blue
+
+  // $custom-navbar-bg: rgb(96,92,168); // purple
+  // $custom-navbar-bg: rgb(0,166,90); // green
+  // $custom-navbar-bg: rgb(221,75,57); // red
+  // $custom-navbar-bg: rgb(243,156,18); // yellow
+  // $custom-navbar-bg: #fff; // white
+  // $custom-navbar-bg: #2962ff; // blue
+  $custom-navbar-color: #FFF;
+  $custom-navbar-active-color: #DDD;
+  $custom-navbar-disabled-color: #333;
+
+  $navbar-toggler-icon:                 url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fff' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  $navbar-toggler-icon-hover:           url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ddd' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

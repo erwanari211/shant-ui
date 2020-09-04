@@ -1,0 +1,21 @@
+/**
+ * metronic demo 1
+ */
+@if $sidebarTheme == 'cuba' {
+  $custom-sidebar-bg: #fff;
+  $custom-sidebar-color: #222222;
+
+  $custom-sidebar-nav-title-color: #7366ff;
+
+  $custom-sidebar-nav-link-hover-bg: lighten(#7366ff, 20%);
+  $custom-sidebar-nav-link-hover-color: #7366ff;
+
+  $custom-sidebar-nav-link-active-bg: lighten(#7366ff, 20%);
+  $custom-sidebar-nav-link-active-color: #7366ff;
+
+  $custom-sidebar-nav-dropdown-bg: $custom-sidebar-bg;
+  $custom-sidebar-nav-dropdown-color: $custom-sidebar-color;
+
+  $custom-sidebar-border-right: 1px solid darken(#fff, 10%);
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

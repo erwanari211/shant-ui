@@ -1,0 +1,57 @@
+// select themes
+$sidebarTheme: 'adminlte-sidebar-dark';
+
+// import themes
+@import "themes";
+
+// variable overrides
+@import "overrides";
+
+// import component
+@import "../../coreui/_sidebar";
+
+// override component
+.sidebar {
+  border-right: $custom-sidebar-border-right;
+
+  .nav {
+    .nav-item.nav-dropdown.open {
+      border-right: $custom-sidebar-border-right;
+
+      > .nav-link.nav-dropdown-toggle {
+        color: $custom-sidebar-nav-link-active-color;
+        background: $custom-sidebar-nav-link-active-bg;
+
+        .nav-icon {
+          color: $custom-sidebar-nav-link-active-color;
+        }
+      }
+
+      .nav-link:hover {
+        color: $custom-sidebar-nav-link-hover-color;
+      }
+
+      .nav-link.active {
+        color: $custom-sidebar-nav-link-hover-color;
+        // background: $custom-sidebar-nav-dropdown-bg;
+        background: $custom-sidebar-nav-link-active-bg;
+      }
+
+      .nav-link.active:hover {
+        background: $custom-sidebar-nav-link-hover-bg;
+      }
+    }
+
+    .nav-item > .nav-link:hover {
+      border-right: $custom-sidebar-border-right;
+
+      &.nav-dropdown-toggle::before {
+        background-image: $custom-sidebar-nav-dropdown-indicator;
+      }
+    }
+
+    .nav-link.active {
+      border-right: $custom-sidebar-border-right;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * metronic demo 1
+ */
+@if $sidebarTheme == 'metronic-demo-1' {
+  $custom-sidebar-bg: #1e1e2d;
+  $custom-sidebar-color: #a2a3b7;
+
+  $custom-sidebar-nav-title-color: #a2a3b7;
+
+  $custom-sidebar-nav-link-hover-bg: darken($custom-sidebar-bg, 1.5%);
+  $custom-sidebar-nav-link-hover-color: #fff;
+
+  $custom-sidebar-nav-link-active-bg: darken($custom-sidebar-bg, 1.5%);
+  $custom-sidebar-nav-link-active-color: #fff;
+
+  $custom-sidebar-nav-dropdown-bg: $custom-sidebar-bg;
+  $custom-sidebar-nav-dropdown-color: $custom-sidebar-color;
+
+  $custom-sidebar-border-right: 1px solid #0d1625;
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

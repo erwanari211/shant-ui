@@ -1,0 +1,8 @@
+// Here you can add other styles
+
+@import "custom/sidebar/main";
+@import "custom/navbar/main";
+
+.app-header {
+    border-bottom: 1px solid darken($custom-navbar-bg, 10%);
+}

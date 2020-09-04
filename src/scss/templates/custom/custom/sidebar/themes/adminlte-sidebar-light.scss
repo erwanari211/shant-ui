@@ -1,0 +1,22 @@
+/**
+ * AdminLTE sidebar Light
+ * adminlte-sidebar-light
+ */
+@if $sidebarTheme == 'adminlte-sidebar-light' {
+  $custom-sidebar-bg: #F9FAFC;
+  $custom-sidebar-color: #777777;
+
+  $custom-sidebar-nav-title-color: #848484;
+
+  $custom-sidebar-nav-link-hover-bg: #F4F4F5;
+  $custom-sidebar-nav-link-hover-color: #000000;
+
+  $custom-sidebar-nav-link-active-bg: #F4F4F5;
+  $custom-sidebar-nav-link-active-color: #000000;
+
+  $custom-sidebar-nav-dropdown-bg: #F4F4F5;
+  $custom-sidebar-nav-dropdown-color: #777777;
+
+  $custom-sidebar-border-right: 1px solid #d2d6de;
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

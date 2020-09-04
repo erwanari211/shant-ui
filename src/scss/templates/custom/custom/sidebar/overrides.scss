@@ -1,0 +1,23 @@
+$sidebar-color:                       $custom-sidebar-color;
+$sidebar-bg:                          $custom-sidebar-bg;
+
+$sidebar-nav-color:                   $custom-sidebar-color;
+$sidebar-nav-title-color:             $custom-sidebar-nav-title-color;
+$sidebar-nav-link-color:              $custom-sidebar-color;
+$sidebar-nav-link-bg:                 transparent !default;
+$sidebar-nav-link-icon-color:         $gray-600 !default;
+
+$sidebar-nav-link-hover-color:        $custom-sidebar-nav-link-hover-color;
+$sidebar-nav-link-hover-bg:           $custom-sidebar-nav-link-hover-bg;
+$sidebar-nav-link-hover-icon-color:   $custom-sidebar-nav-link-hover-color;
+
+$sidebar-nav-link-active-color:       $custom-sidebar-nav-link-active-color;
+$sidebar-nav-link-active-bg:          $custom-sidebar-nav-link-active-bg;
+$sidebar-nav-link-active-icon-color:  $custom-sidebar-nav-link-active-color;
+
+$sidebar-nav-link-disabled-color:       darken(#fff, 30%) !default;
+$sidebar-nav-link-disabled-bg:          $sidebar-bg !default;
+$sidebar-nav-link-disabled-icon-color:  $sidebar-nav-link-icon-color !default;
+
+$sidebar-nav-dropdown-color:          $custom-sidebar-nav-dropdown-color;
+$sidebar-nav-dropdown-bg:             $custom-sidebar-nav-dropdown-bg;
