@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Datetime Picker</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="">Normal Input</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="datetimepicker1">Datetime Picker</label>
+                          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="datetimepicker5">No Icon</label>
+                          <input type="text" class="form-control datetimepicker-input" id="datetimepicker5" data-toggle="datetimepicker" data-target="#datetimepicker5"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                      </div>
+
+                      <div class='col-sm-6'>
+                        <div class="form-group">
+                          <label for="datetimepicker7">Start</label>
+                          <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker7"/>
+                            <div class="input-group-append" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-sm-6'>
+                        <div class="form-group">
+                          <label for="datetimepicker8">End</label>
+                          <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker8"/>
+                            <div class="input-group-append" data-target="#datetimepicker8" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class='col-sm-6'>
+                        <div class="form-group">
+                          <label for="datetimepicker11">Datetime Picker</label>
+                          <div class="input-group date">
+                            <input type="text"
+                              id="datetimepicker11"
+                              data-toggle="datetimepicker"
+                              class="form-control datetimepicker-input"
+                              data-target="#datetimepicker11"/>
+                            <div class="input-group-append"
+                              data-target="#datetimepicker11"
+                              data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tempora!
+                        Distinctio quod nulla nesciunt cupiditate pariatur obcaecati temporibus tempore minus.
+                        Tempore illo velit nam unde molestiae ratione recusandae dolor possimus.
+                        Itaque facilis cumque ex harum ipsa error assumenda rem provident.
+                        Adipisci tenetur, deleniti vel ea quisquam corporis qui possimus reiciendis.
+                        Impedit corporis accusamus asperiores distinctio vero sint nobis, a cum?
+                        Velit maiores consequatur iste nostrum totam voluptatum repellat eaque enim!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script>
+      $(function () {
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker5').datetimepicker();
+
+        $('#datetimepicker7').datetimepicker();
+        $('#datetimepicker8').datetimepicker({
+            useCurrent: false
+        });
+        $("#datetimepicker7").on("change.datetimepicker", function (e) {
+            $('#datetimepicker8').datetimepicker('minDate', e.date);
+        });
+        $("#datetimepicker8").on("change.datetimepicker", function (e) {
+            $('#datetimepicker7').datetimepicker('maxDate', e.date);
+        });
+
+        $('#datetimepicker11').datetimepicker({
+          format: 'YYYY-MM-DD HH:mm',
+        });
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
