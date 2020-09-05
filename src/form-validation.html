@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <style>
+      /* .form-group.has-success .form-control {
+        border-color: #28a745;
+        padding-right: calc(1.5em + 0.75rem);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: center right calc(0.375em + 0.1875rem);
+        background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      }
+
+      .form-group.has-danger .form-control {
+        border-color: #dc3545;
+        padding-right: calc(1.5em + 0.75rem);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center right calc(0.375em + 0.1875rem);
+        background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      }
+
+      .pristine-error {
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #dc3545;
+        width: 100%;
+      } */
+
+    </style>
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Form</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+
+                        <form id="main-form">
+                          <div class="form-group">
+                            <label>Username (required)</label>
+                            <input type="text"
+                              name="username"
+                              value="johnsmith"
+                              required
+                              data-pristine-required-message="Please choose a username"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email"
+                              required
+                              name="email"
+                              value="user@app.com"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>ZIP code</label>
+                            <input type="text"
+                              name="zip_code"
+                              data-pristine-pattern="/^[0-9]{5}(?:-[0-9]{4})?$/"
+                              data-pristine-pattern-message="Invalid ZIP code"
+                              class="form-control"
+                              value="12345"/>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Your age (required, min. 14)</label>
+                            <input type="number"
+                              name="age"
+                              min="14"
+                              data-pristine-min-message="You must be at least 14-years-old"
+                              data-pristine-type="integer"
+                              required
+                              class="form-control"
+                              value="17" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Password (required)</label>
+                            <input type="password" id="pwd"
+                              name="password"
+                              required
+                              data-pristine-required-message="Please choose a password"
+                              data-pristine-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/"
+                              data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
+                              value="P455word"
+                              class="form-control" />
+                            (see <a href="https://stackoverflow.com/questions/19605150" target="_blank">here</a> other password patterns.)
+                          </div>
+                          <div class="form-group">
+                            <label>Retype password</label>
+                            <input type="password"
+                              name="password_confirmation"
+                              data-pristine-equals="#pwd"
+                              data-pristine-equals-message="Passwords don't match"
+                              value="P455word"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control"
+                              name="message"
+                              id="message"
+                              data-pristine-minlength="10"
+                              data-pristine-maxlength="160"
+                              rows="3">This is your message</textarea>
+                          </div>
+
+                          <div class="form-group inline-label">
+                            <input id="toc" type="checkbox"
+                              name="toc"
+                              required data-pristine-required-message="You must accept the terms and conditions"/>
+                            <label for="toc">I accept the terms and conditions (required)</label><br/>
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>Alpha</label>
+                            <input type="text"
+                              name="alpha"
+                              data-pristine-alpha
+                              value="ABC"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Alpha Num</label>
+                            <input type="text"
+                              name="alphanum"
+                              data-pristine-alphanum
+                              value="ABC123"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Alpha Dash</label>
+                            <input type="text"
+                              name="alphadash"
+                              data-pristine-alphadash
+                              value="ABC-123_DEF"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>Regex</label>
+                            <input type="text"
+                              name="regex"
+                              data-pristine-regex="^[A-Za-z]+$"
+                              value="ABCDEF"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Not Regex</label>
+                            <input type="text"
+                              name="regex"
+                              data-pristine-not-regex="^[A-Za-z]+$"
+                              value="ABCDEF"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>URL</label>
+                            <input type="text"
+                              name="url"
+                              data-pristine-url
+                              value="https://coreui.io/"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label for="file">File</label>
+                            <input type="file" class="form-control-file"
+                              data-pristine-file-ext="jpg|png"
+                              name="file" id="file">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date"
+                              name="date"
+                              id="date"
+                              class="form-control">
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label for="after-date">After Date</label>
+                            <input type="date"
+                              name="after-date"
+                              id="after-date"
+                              data-pristine-after-date="2020-01-01"
+                              value="2019-12-31"
+                              class="form-control">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="after-or-equal-date">After or Equal Date</label>
+                            <input type="date"
+                              name="after-or-equal-date"
+                              id="after-or-equal-date"
+                              data-pristine-after-or-equal-date="2020-01-01"
+                              value="2019-12-31"
+                              class="form-control">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="before-date">Before Date</label>
+                            <input type="date"
+                              name="before-date"
+                              id="before-date"
+                              data-pristine-before-date="2020-01-01"
+                              value="2020-01-31"
+                              class="form-control">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="before-or-equal-date">Before or Equal Date</label>
+                            <input type="date"
+                              name="before-or-equal-date"
+                              id="before-or-equal-date"
+                              data-pristine-before-or-equal-date="2020-01-01"
+                              value="2020-01-31"
+                              class="form-control">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="date-equals">Date Equals</label>
+                            <input type="date"
+                              name="date-equals"
+                              id="date-equals"
+                              data-pristine-date-equals="2020-01-01"
+                              value="2020-01-31"
+                              class="form-control">
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>Between</label>
+                            <input type="number"
+                              name="between"
+                              data-pristine-between="10,30"
+                              value="17"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Different 1</label>
+                            <input type="text"
+                              name="different-1"
+                              id="different-1"
+                              data-pristine-different="different-2"
+                              value="different 1"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Different 2</label>
+                            <input type="text"
+                              name="different-2"
+                              id="different-2"
+                              value="different 2"
+                              data-pristine-different="different-1"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Same 1</label>
+                            <input type="text"
+                              name="same-1"
+                              id="same-1"
+                              data-pristine-same="same-2"
+                              value="same 1"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Same 2</label>
+                            <input type="text"
+                              name="same-2"
+                              id="same-2"
+                              value="same 2"
+                              data-pristine-same="same-1"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Ends With</label>
+                            <input type="text"
+                              name="end_with"
+                              id="end_with"
+                              value="foo foo foo "
+                              data-pristine-ends-with="foo|bar|baz"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Starts With</label>
+                            <input type="text"
+                              name="start_with"
+                              id="start_with"
+                              value="foo foo foo "
+                              data-pristine-starts-with="foo|bar|baz"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>GT1</label>
+                            <input type="number"
+                              name="gt_1"
+                              id="gt_1"
+                              value="50"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>GT2</label>
+                            <input type="number"
+                              name="gt_2"
+                              id="gt_2"
+                              data-pristine-gt="gt_1"
+                              value="40"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>GT3</label>
+                            <input type="number"
+                              name="gt_3"
+                              id="gt_3"
+                              data-pristine-gte="gt_1"
+                              value="45"
+                              class="form-control" />
+                          </div>
+
+
+                          <div class="form-group">
+                            <label>LT1</label>
+                            <input type="number"
+                              name="lt_1"
+                              id="lt_1"
+                              value="50"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>LT2</label>
+                            <input type="number"
+                              name="lt_2"
+                              id="lt_2"
+                              data-pristine-lt="lt_1"
+                              value="55"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>LT3</label>
+                            <input type="number"
+                              name="lt_3"
+                              id="lt_3"
+                              data-pristine-lte="lt_1"
+                              value="65"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>In (Status)</label>
+                            <input type="text"
+                              name="in_status"
+                              id="in_status"
+                              data-pristine-in="draft|published|archived"
+                              value="draft"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Not In (Animal)</label>
+                            <input type="text"
+                              name="not_in_status"
+                              id="not_in_status"
+                              data-pristine-not-in="dog|pig"
+                              value="Dog"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <label>Conditional</label>
+                            <select
+                              class="form-control"
+                              name="required_if_1" id="required_if_1">
+                              <option value="yes" selected>Yes</option>
+                              <option value="no">No</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required If Conditional = Yes</label>
+                            <input type="text"
+                              name="required_if_2"
+                              id="required_if_2"
+                              data-pristine-required-if="required_if_1,yes"
+                              value=""
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required Unless Conditional = No</label>
+                            <input type="text"
+                              name="required_unless_3"
+                              id="required_unless_3"
+                              data-pristine-required-unless="required_if_1,no"
+                              value=""
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required with Conditional 1</label>
+                            <input type="text"
+                              name="required_with_conditional_1"
+                              id="required_with_conditional_1"
+                              value="001"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required with Conditional 2</label>
+                            <input type="text"
+                              name="required_with_conditional_2"
+                              id="required_with_conditional_2"
+                              value="002"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required with Conditional 3</label>
+                            <input type="text"
+                              name="required_with_conditional_3"
+                              id="required_with_conditional_3"
+                              value=""
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required with 1,2,3</label>
+                            <input type="text"
+                              name="required_with_conditional_4"
+                              id="required_with_conditional_4"
+                              value=""
+                              data-pristine-required-with="required_with_conditional_1|required_with_conditional_2|required_with_conditional_3"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required with all 1,2,3</label>
+                            <input type="text"
+                              name="required_with_conditional_5"
+                              id="required_with_conditional_5"
+                              value=""
+                              data-pristine-required-with-all="required_with_conditional_1|required_with_conditional_2|required_with_conditional_3"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required without 1,2,3</label>
+                            <input type="text"
+                              name="required_with_conditional_6"
+                              id="required_with_conditional_6"
+                              value=""
+                              data-pristine-required-without="required_with_conditional_1|required_with_conditional_2|required_with_conditional_3"
+                              class="form-control" />
+                          </div>
+
+                          <div class="form-group">
+                            <label>Required without all 1,2,3</label>
+                            <input type="text"
+                              name="required_with_conditional_7"
+                              id="required_with_conditional_7"
+                              value=""
+                              data-pristine-required-without-all="required_with_conditional_1|required_with_conditional_2|required_with_conditional_3"
+                              class="form-control" />
+                          </div>
+
+                          <hr>
+
+                          <div class="form-group">
+                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://combinatronics.com/Sha256/Pristine/master/dist/pristine.js"></script>
+    <script src="js/pristine-custom-validation.js"></script>
+
+    <script>
+      $(function () {
+        var form = document.getElementById("main-form");
+
+        var pristine = new Pristine(form);
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var valid = pristine.validate();
+          // alert('Form is valid: ' + valid);
+          if(valid){
+            var inputs = $(this).serializeArray()
+            console.log(inputs)
+          }
+        });
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>

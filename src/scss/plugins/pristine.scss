@@ -1,0 +1,34 @@
+.form-group.has-success .form-control {
+  border-color: $form-feedback-valid-color;
+  padding-right: $input-height-inner;
+  background-image: $form-feedback-icon-valid;
+  background-repeat: no-repeat;
+  background-position: center right $input-height-inner-quarter;
+  background-size: $input-height-inner-half $input-height-inner-half;
+
+  &:focus {
+    border-color: $form-feedback-valid-color;
+    box-shadow: 0 0 0 $input-focus-width rgba($form-feedback-valid-color, .25);
+  }
+}
+
+.form-group.has-danger .form-control {
+  border-color: $form-feedback-invalid-color;
+  padding-right: $input-height-inner;
+  background-image: $form-feedback-icon-invalid;
+  background-repeat: no-repeat;
+  background-position: center right $input-height-inner-quarter;
+  background-size: $input-height-inner-half $input-height-inner-half;
+
+  &:focus {
+    border-color: $form-feedback-invalid-color;
+    box-shadow: 0 0 0 $input-focus-width rgba($form-feedback-invalid-color, .25);
+  }
+}
+
+.pristine-error {
+  width: 100%;
+  margin-top: $form-feedback-margin-top;
+  @include font-size($form-feedback-font-size);
+  color: $form-feedback-invalid-color;
+}
