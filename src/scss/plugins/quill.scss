@@ -1,0 +1,48 @@
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: $input-border-width solid $input-border-color;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: $input-border-radius $input-border-radius 0 0;
+}
+
+.ql-container.ql-snow {
+  border-radius: 0 0 $input-border-radius $input-border-radius;
+}
+
+.form-group.has-success {
+  .ql-toolbar.ql-snow,
+  .ql-container.ql-snow {
+    border-color: $form-feedback-valid-color;
+  }
+
+  .ql-toolbar.ql-snow {
+    border-bottom-color: $input-border-color;
+  }
+
+  .ql-editor {
+    background-image: $form-feedback-icon-valid;
+    background-repeat: no-repeat;
+    background-position: bottom $input-height-inner-quarter right $input-height-inner-quarter;
+    background-size: $input-height-inner-half $input-height-inner-half;
+  }
+}
+
+.form-group.has-danger {
+  .ql-toolbar.ql-snow,
+  .ql-container.ql-snow {
+    border-color: $form-feedback-invalid-color;
+  }
+
+  .ql-toolbar.ql-snow {
+    border-bottom-color: $input-border-color;
+  }
+
+  .ql-editor {
+    background-image: $form-feedback-icon-invalid;
+    background-repeat: no-repeat;
+    background-position: bottom $input-height-inner-quarter right $input-height-inner-quarter;
+    background-size: $input-height-inner-half $input-height-inner-half;
+  }
+}
