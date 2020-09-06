@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.css"/>
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Datatables</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="table-responsive">
+
+                          <table id="main-table" class="table table-hover table-bordered display" style="width:100%">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                                <th>Start Date</th>
+                                <th>Office</th>
+                                <th>Ext</th>
+                              </tr>
+                            </thead>
+                            <tfoot>
+                              <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                                <th>Start Date</th>
+                                <th>Office</th>
+                                <th>Ext</th>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#main-table').DataTable( {
+            "ajax": "js/datatables-objects.txt",
+            "columns": [
+              { "data": "name" },
+              { "data": "position" },
+              { "data": "salary" },
+              { "data": "start_date" },
+              { "data": "office" },
+              { "data": "extn" },
+            ],
+            columnDefs: [
+              { targets: 1, responsivePriority: 10003  },
+              { targets: 3, responsivePriority: 10002  },
+              { targets: 2, responsivePriority: 10001 },
+              // right to left
+              { targets: 5, responsivePriority: 2  },
+              { targets: 0, responsivePriority: 1  },
+            ],
+            "responsive":  {
+              details: {
+                display: $.fn.dataTable.Responsive.display.modal( {
+                  header: function ( row ) {
+                    var data = row.data();
+                    return `Details for ${ data['name'] }`;
+                  }
+                } ),
+                // renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                //   tableClass: 'table'
+                // } )
+                renderer: function ( api, rowIdx, columns ) {
+                  var data = $.map( columns, function ( col, i ) {
+                    return `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}">
+                      <td>${col.title}:</td>
+                      <td>${col.data}</td>
+                    </tr>`
+                  } ).join('');
+
+                  return data ?
+                    $('<table class="table" />').append( data ) :
+                    false;
+                }
+              }
+            },
+          } );
+      } );
+    </script>
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
