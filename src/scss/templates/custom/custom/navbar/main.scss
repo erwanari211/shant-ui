@@ -10,3 +10,26 @@ $navbarTheme: 'navbar-dark-blue';
 // import component
 @import "../../bootstrap/_navbar";
 @import "../../coreui/_navbar";
+
+.app-header.app-header--type-2 {
+  .navbar-brand {
+    width: $sidebar-width;
+    background-color: transparent;
+  }
+}
+
+@include media-breakpoint-up($breakpoint-mobile-up) {
+  .app-header.app-header--type-2 {
+    .navbar-brand {
+      background-color: $custom-sidebar-bg;
+    }
+  }
+
+  .brand-minimized {
+    .app-header.app-header--type-2 {
+      .navbar-brand {
+        width: 50px;
+      }
+    }
+  }
+}
