@@ -17831,6 +17831,20 @@ body {
   }
 }
 
+.app-header.app-header--type-2 .navbar-brand {
+  width: 200px;
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  .app-header.app-header--type-2 .navbar-brand {
+    background-color: #222D32;
+  }
+  .brand-minimized .app-header.app-header--type-2 .navbar-brand {
+    width: 50px;
+  }
+}
+
 .app-header {
   border-bottom: 1px solid #307095;
 }
