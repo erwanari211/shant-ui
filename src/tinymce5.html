@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <form id="main-form">
+                      <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="form-control" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea name="content" id="content" class="form-control" required>
+                          <p>Hello World!</p>
+                          <p>Some initial <strong>bold</strong> text</p>
+                          <p><br></p>
+                        </textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Full Featured Non Premium Plugins</label>
+                        <textarea name="content2" id="content2" class="form-control">
+                          <p style="text-align: center; font-size: 15px;">
+                            <img title="TinyMCE Logo" src="//www.tiny.cloud/images/glyph-tinymce@2x.png" alt="TinyMCE Logo" width="110" height="97" />
+                          </p>
+                          <h2 style="text-align: center;">Welcome to the TinyMCE Cloud demo!</h2>
+                          <p>Please try out the features provided in this full featured example (excluding <a href="https://www.tiny.cloud/apps/">Premium Plugins</a> ).</p>
+
+                          <h2>Got questions or need help?</h2>
+                          <ul>
+                            <li>Our <a class="mceNonEditable" href="//www.tiny.cloud/docs/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+                            <li>Have a specific question? Visit the <a class="mceNonEditable" href="https://community.tiny.cloud/forum/">Community Forum</a>.</li>
+                            <li>We also offer enterprise grade support as part of <a href="https://www.tiny.cloud/pricing">TinyMCE premium plans</a>.</li>
+                          </ul>
+
+                          <h2>A simple table to play with</h2>
+                          <table style="border-collapse: collapse; width: 100%;" border="1">
+                            <thead>
+                              <tr>
+                                <th>Product</th>
+                                <th>Cost</th>
+                                <th>Really?</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>TinyMCE Cloud</td>
+                                <td>Get started for free</td>
+                                <td>YES!</td>
+                              </tr>
+                              <tr>
+                                <td>Plupload</td>
+                                <td>Free</td>
+                                <td>YES!</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <h2>Found a bug?</h2>
+                          <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+
+                          <h2>Finally ...</h2>
+                          <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+                          <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+
+                        </textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Distraction-free editor</label>
+
+                        <div class='demo-dfree'>
+                          <h2 class="dfree-header mce-content-body" contenteditable="true" style="position: relative;" spellcheck="false">
+                            The latest and greatest from TinyMCE
+                          </h2>
+                          <br/>
+                          <div class="dfree-body mce-content-body" contenteditable="true" style="position: relative;" spellcheck="false">
+                            <p><img src="https://tiny.cloud/images/medium-pic.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 100%;" data-mce-style="display: block; margin-left: auto; margin-right: auto;" data-mce-selected="1"></p>
+                            <br/>
+                            <h2>The world’s first rich text editor in the cloud</h2>
+
+                            <p>
+                              Have you heard about Tiny Cloud?
+                              It’s the first step in our journey to help you deliver great content creation experiences, no matter your level of expertise.
+                              50,000 developers already agree.
+                              They get free access to our global CDN, image proxy services and auto updates to the TinyMCE editor.
+                              They’re also ready for some exciting updates coming soon.
+                            </p>
+
+
+                            <p>
+                              One of these enhancements is <strong>Tiny Drive</strong>: imagine file management for TinyMCE, in the cloud, made super easy.
+                              Learn more at <a href='https://www.tiny.cloud/tinydrive/'>tiny.cloud/tinydrive</a>, where you’ll find a working demo and an opportunity to provide feedback to the product team.
+                            </p>
+
+                            <h3>An editor for every project</h3>
+
+                            <p>
+                              Here are some of our customer’s most common use cases for TinyMCE:
+                              <ul>
+                                <li>Content Management Systems (<em>e.g. WordPress, Umbraco</em>)</li>
+                                <li>Learning Management Systems (<em>e.g. Blackboard</em>)</li>
+                                <li>Customer Relationship Management and marketing automation (<em>e.g. Marketo</em>)</li>
+                                <li>Email marketing (<em>e.g. Constant Contact</em>)</li>
+                                <li>Content creation in SaaS systems (<em>e.g. Eventbrite, Evernote, GoFundMe, Zendesk</em>)</li>
+                              </ul>
+                            </p>
+
+                            <p>
+                              And those use cases are just the start.
+                              TinyMCE is incredibly flexible, and with hundreds of APIs there’s likely a solution for your editor project.
+                              If you haven’t experienced Tiny Cloud, get started today.
+                              You’ll even get a free trial of our premium plugins – no credit card required!
+                            </p>
+                          </div>
+                        </div>
+
+
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Inline editor</label>
+
+                        <div class="demo-inline">
+                          <div class="container">
+                            <p><img src="https://www.tiny.cloud/images/email-banner-2.png" /></p>
+                            <h1 class="tinymce-heading">The world&rsquo;s first rich text editor in the cloud</h1>
+                            <p><img src="https://www.tiny.cloud/images/image-two.jpg" /></p>
+                            <div class="tinymce-body">
+                              <p>Have you heard about Tiny Cloud? It&rsquo;s the first step in our journey to help you deliver great content creation experiences, no matter your level of expertise. 50,000 developers already agree. They get free access to our global CDN, image proxy services and auto updates to the TinyMCE editor. They&rsquo;re also ready for some exciting updates coming soon.</p>
+                              <p>One of these enhancements is <strong>Tiny Drive</strong>: imagine file management for TinyMCE, in the cloud, made super easy. Learn more at <a href="../../../tinydrive/">tiny.cloud/tinydrive</a>, where you&rsquo;ll find a working demo and an opportunity to provide feedback to the product team.</p>
+                            </div>
+                          </div>
+                          <h2 class="tinymce-heading">An editor for every project</h2>
+                          <div class="tinymce-body">
+                            <p>Here are some of our customer&rsquo;s most common use cases for TinyMCE:</p>
+                            <ul>
+                            <li>Content Management Systems (<em>e.g. WordPress, Umbraco</em>)</li>
+                            <li>Learning Management Systems (<em>e.g. Blackboard</em>)</li>
+                            <li>Customer Relationship Management and marketing automation (<em>e.g. Marketo</em>)</li>
+                            <li>Email marketing (<em>e.g. Constant Contact</em>)</li>
+                            <li>Content creation in SaaS systems (<em>e.g. Eventbrite, Evernote, GoFundMe, Zendesk</em>)</li>
+                            </ul>
+                            <p>And those use cases are just the start. TinyMCE is incredibly flexible, and with hundreds of APIs there&rsquo;s likely a solution for your editor project. If you haven&rsquo;t experienced Tiny Cloud, get started today. You&rsquo;ll even get a free trial of our premium plugins &ndash; no credit card required!</p>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Classic editor</label>
+
+                        <textarea id="classic">
+                          <img style="float:right" src='https://www.tiny.cloud/images/glyph-tinymce@2x.png' alt="TinyMCE" height='150px'/>
+
+                          <h2>The world’s first rich text editor in the cloud</h2>
+
+                          <p>
+                            Have you heard about Tiny Cloud?
+                            It’s the first step in our journey to help you deliver great content creation experiences, no matter your level of expertise.
+                            50,000 developers already agree.
+                            They get free access to our global CDN, image proxy services and auto updates to the TinyMCE editor.
+                            They’re also ready for some exciting updates coming soon.
+                          </p>
+
+
+                          <p>
+                            One of these enhancements is <strong>Tiny Drive</strong>: imagine file management for TinyMCE, in the cloud, made super easy.
+                            Learn more at <a href='https://www.tiny.cloud/tinydrive/'>tinymce.com/tinydrive</a>, where you’ll find a working demo and an opportunity to provide feedback to the product team.
+                          </p>
+
+                          <h3>An editor for every project</h3>
+
+                          <p>
+                            Here are some of our customer’s most common use cases for TinyMCE:
+                            <ul>
+                              <li>Content Management Systems (<em>e.g. WordPress, Umbraco</em>)</li>
+                              <li>Learning Management Systems (<em>e.g. Blackboard</em>)</li>
+                              <li>Customer Relationship Management and marketing automation (<em>e.g. Marketo</em>)</li>
+                              <li>Email marketing (<em>e.g. Constant Contact</em>)</li>
+                              <li>Content creation in SaaS systems (<em>e.g. Eventbrite, Evernote, GoFundMe, Zendesk</em>)</li>
+                            </ul>
+                          </p>
+
+                          <p>
+                            And those use cases are just the start.
+                            TinyMCE is incredibly flexible, and with hundreds of APIs there’s likely a solution for your editor project.
+                            If you haven’t experienced Tiny Cloud, get started today.
+                            You’ll even get a free trial of our premium plugins – no credit card required!
+                          </p>
+
+                        </textarea>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Custom formats</label>
+
+                        <textarea id="format-custom">
+                          <p>
+                            <img title="TinyMCE Logo" src="//www.tiny.cloud/images/glyph-tinymce@2x.png" alt="TinyMCE Logo" width="110" height="97" />
+                          </p>
+
+                          <h2>Welcome to the TinyMCE editor demo!</h2>
+                          <p>
+                            Please try out the features provided in this custom formats example.
+                          </p>
+
+                          <h2>Got questions or need help?</h2>
+                          <ul>
+                            <li>Our <a href="https://www.tiny.cloud/docs/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+                            <li>Have a specific question? Visit the <a href="https://community.tiny.cloud/forum/">Community Forum</a>.</li>
+                            <li>We also offer enterprise grade support as part of <a href="https://www.tiny.cloud/pricing">TinyMCE premium plans</a>.</li>
+                          </ul>
+
+                          <h2>A simple table to play with</h2>
+                          <table style="border-collapse: collapse; width: 100%;" border="1">
+                            <thead>
+                              <tr>
+                                <th>Product</th>
+                                <th>Cost</th>
+                                <th>Really?</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>TinyMCE</td>
+                                <td>Free</td>
+                                <td>YES!</td>
+                              </tr>
+                              <tr>
+                                <td>Plupload</td>
+                                <td>Free</td>
+                                <td>YES!</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <h2>Found a bug?</h2>
+                          <p>
+                            If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.
+                          </p>
+
+                          <h2>Finally ...</h2>
+                          <p>
+                            Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.
+                          </p>
+                          <p>
+                            Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.
+                          </p>
+                        </textarea>
+
+
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea name="content3" id="content3" class="form-control" required>
+                          <p>Hello World!</p>
+                          <p>Some initial <strong>bold</strong> text</p>
+                        </textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://combinatronics.com/Sha256/Pristine/master/dist/pristine.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      var form = document.getElementById("main-form");
+      var pristine = new Pristine(form);
+
+      tinymce.init({
+        selector:'#content'
+      });
+
+      tinymce.init({
+        selector:'#content2',
+        plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+        imagetools_cors_hosts: ['picsum.photos'],
+        menubar: 'file edit view insert format tools table help',
+        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+        toolbar_sticky: true,
+        autosave_ask_before_unload: true,
+        autosave_interval: '30s',
+        autosave_prefix: '{path}{query}-{id}-',
+        autosave_restore_when_empty: false,
+        autosave_retention: '2m',
+        image_advtab: true,
+        link_list: [
+          { title: 'My page 1', value: 'http://www.tinymce.com' },
+          { title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_list: [
+          { title: 'My page 1', value: 'http://www.tinymce.com' },
+          { title: 'My page 2', value: 'http://www.moxiecode.com' }
+        ],
+        image_class_list: [
+          { title: 'None', value: '' },
+          { title: 'Some class', value: 'class-name' }
+        ],
+        importcss_append: true,
+        file_picker_callback: function (callback, value, meta) {
+          /* Provide file and text for the link dialog */
+          if (meta.filetype === 'file') {
+            callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+          }
+
+          /* Provide image and alt text for the image dialog */
+          if (meta.filetype === 'image') {
+            callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+          }
+
+          /* Provide alternative source and posted for the media dialog */
+          if (meta.filetype === 'media') {
+            callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+          }
+        },
+        templates: [
+              { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+          { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+          { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+        ],
+        template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+        template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+        height: 600,
+        image_caption: true,
+        quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+        noneditable_noneditable_class: 'mceNonEditable',
+        toolbar_mode: 'sliding',
+        contextmenu: 'link image imagetools table',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+
+      });
+
+      // distraction-free editor
+      var dfreeHeaderConfig = {
+        selector: '.dfree-header',
+        menubar: false,
+        inline: true,
+        toolbar: false,
+        plugins: [ 'quickbars' ],
+        quickbars_insert_toolbar: 'undo redo',
+        quickbars_selection_toolbar: 'italic underline',
+      };
+
+      var dfreeBodyConfig = {
+        selector: '.dfree-body',
+        menubar: false,
+        inline: true,
+        plugins: [
+          'autolink',
+          'codesample',
+          'link',
+          'lists',
+          'media',
+          'table',
+          'image',
+          'quickbars',
+          'codesample',
+          'help'
+        ],
+        toolbar: false,
+        quickbars_insert_toolbar: 'quicktable image media codesample',
+        quickbars_selection_toolbar: 'bold italic underline | formatselect | blockquote quicklink',
+        contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
+        powerpaste_word_import: 'clean',
+        powerpaste_html_import: 'clean',
+      };
+
+      tinymce.init(dfreeHeaderConfig);
+      tinymce.init(dfreeBodyConfig);
+
+      // inline editor
+      var emailHeaderConfig = {
+        selector: '.tinymce-heading',
+        menubar: false,
+        inline: true,
+        plugins: [
+          'lists',
+          'autolink'
+        ],
+        toolbar: 'undo redo | bold italic underline',
+        valid_elements: 'strong,em,span[style],a[href]',
+        valid_styles: {
+          '*': 'font-size,font-family,color,text-decoration,text-align'
+        },
+        powerpaste_word_import: 'clean',
+        powerpaste_html_import: 'clean',
+      };
+
+      var emailBodyConfig = {
+        selector: '.tinymce-body',
+        menubar: false,
+        inline: true,
+        plugins: [
+          'link',
+          'lists',
+          'autolink',
+        ],
+        toolbar: [
+          'undo redo | bold italic underline | fontselect fontsizeselect',
+          'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+        ],
+        valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
+        valid_styles: {
+          '*': 'font-size,font-family,color,text-decoration,text-align'
+        },
+        powerpaste_word_import: 'clean',
+        powerpaste_html_import: 'clean',
+      };
+
+      tinymce.init(emailHeaderConfig);
+      tinymce.init(emailBodyConfig);
+
+      // classic editor
+      var table = '<p>This table uses features of the non-editable plugin to make the text in the<br /><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +
+      '    <table style="width: 60%; border-collapse: collapse;" border="1"> ' +
+      '        <caption class="mceNonEditable">Ephox Sales Analysis</caption> ' +
+      '       <tbody> ' +
+      '          <tr class="mceNonEditable"> ' +
+      '                <th style="width: 40%;">&nbsp;</th><th style="width: 15%;">Q1</th> ' +
+      '                <th style="width: 15%;">Q2</th><th style="width: 15%;">Q3</th> ' +
+      '                <th style="width: 15%;">Q4</th> ' +
+      '            </tr> ' +
+      '            <tr> ' +
+      '                <td class="mceNonEditable">East Region</td> ' +
+      '                <td>100</td> <td>110</td> <td>115</td> <td>130</td> ' +
+      '            </tr> ' +
+      '            <tr> ' +
+      '                <td class="mceNonEditable">Central Region</td> ' +
+      '                <td>100</td> <td>110</td> <td>115</td> <td>130</td> ' +
+      '            </tr> ' +
+      '            <tr> ' +
+      '                <td class="mceNonEditable">West Region</td> ' +
+      '                <td>100</td> <td>110</td> <td>115</td> <td>130</td> ' +
+      '            </tr> ' +
+      '        </tbody> ' +
+      '    </table>';
+
+      var table2 = '<div> ' +
+      '        <p>' +
+      '            Templates are a great way to help content authors get started creating content.  You can define the HTML for the template and ' +
+      '            then when the author inserts the template they have a great start towards creating content! ' +
+      '        </p> ' +
+      '        <p> ' +
+      '            In this example we create a simple table for providing product details for a product page on your web site.  The headings are ' +
+      '            made non-editable by loading the non-editable plugin and placing the correct class on the appropriate table cells. ' +
+      '        </p> ' +
+      '        <table style="width:90%; border-collapse: collapse;" border="1"> ' +
+      '        <tbody> ' +
+      '        <tr style="height: 30px;"> ' +
+      '            <th class="mceNonEditable" style="width:40%; text-align: left;">Product Name:</td><td style="width:60%;">{insert name here}</td> ' +
+      '        </tr> ' +
+      '        <tr style="height: 30px;"> ' +
+      '            <th class="mceNonEditable" style="width:40%; text-align: left;">Product Description:</td><td style="width:60%;">{insert description here}</td> ' +
+      '        </tr> ' +
+      '        <tr style="height: 30px;"> ' +
+      '            <th class="mceNonEditable" style="width:40%; text-align: left;">Product Price:</td><td style="width:60%;">{insert price here}</td> ' +
+      '        </tr> ' +
+      '        </tbody> ' +
+      '        </table> ' +
+      '    </div> ';
+
+      var demoBaseConfig = {
+        selector: 'textarea#classic',
+        height: 500,
+        resize: false,
+        autosave_ask_before_unload: false,
+        powerpaste_allow_local_images: true,
+        plugins: [
+          ' advlist anchor autolink codesample fullscreen help image imagetools ',
+          ' lists link media noneditable preview',
+          ' searchreplace table template visualblocks wordcount'
+        ],
+        templates: [
+          {
+            title: 'Non-editable Example',
+            description: 'Non-editable example.',
+            content: table
+          },
+          {
+            title: 'Simple Table Example',
+            description: 'Simple Table example.',
+            content: table2
+          }
+        ],
+        toolbar:
+          'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive',
+        spellchecker_dialog: true,
+        spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+        tinydrive_demo_files_url: '/docs/demo/tiny-drive-demo/demo_files.json',
+        tinydrive_token_provider: function (success, failure) {
+          success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
+        },
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+      };
+
+      tinymce.init(demoBaseConfig);
+
+      // custom format
+      tinymce.init({
+        selector: 'textarea#format-custom',
+        height: 500,
+        plugins: 'table wordcount',
+        content_style: '.left { text-align: left; } ' +
+          'img.left { float: left; } ' +
+          'table.left { float: left; } ' +
+          '.right { text-align: right; } ' +
+          'img.right { float: right; } ' +
+          'table.right { float: right; } ' +
+          '.center { text-align: center; } ' +
+          'img.center { display: block; margin: 0 auto; } ' +
+          'table.center { display: block; margin: 0 auto; } ' +
+          '.full { text-align: justify; } ' +
+          'img.full { display: block; margin: 0 auto; } ' +
+          'table.full { display: block; margin: 0 auto; } ' +
+          '.bold { font-weight: bold; } ' +
+          '.italic { font-style: italic; } ' +
+          '.underline { text-decoration: underline; } ' +
+          '.example1 {} ' +
+          'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }' +
+          '.tablerow1 { background-color: #D3D3D3; }',
+        formats: {
+          alignleft: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'left' },
+          aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'center' },
+          alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'right' },
+          alignfull: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' },
+          bold: { inline: 'span', classes: 'bold' },
+          italic: { inline: 'span', classes: 'italic' },
+          underline: { inline: 'span', classes: 'underline', exact: true },
+          strikethrough: { inline: 'del' },
+          customformat: { inline: 'span', styles: { color: '#00ff00', fontSize: '20px' }, attributes: { title: 'My custom format'} , classes: 'example1'}
+        },
+        style_formats: [
+          { title: 'Custom format', format: 'customformat' },
+          { title: 'Align left', format: 'alignleft' },
+          { title: 'Align center', format: 'aligncenter' },
+          { title: 'Align right', format: 'alignright' },
+          { title: 'Align full', format: 'alignfull' },
+          { title: 'Bold text', inline: 'strong' },
+          { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
+          { title: 'Red header', block: 'h1', styles: { color: '#ff0000' } },
+          { title: 'Badge', inline: 'span', styles: { display: 'inline-block', border: '1px solid #2276d2', 'border-radius': '5px', padding: '2px 5px', margin: '0 2px', color: '#2276d2' } },
+          { title: 'Table row 1', selector: 'tr', classes: 'tablerow1' },
+          { title: 'Image formats' },
+          { title: 'Image Left', selector: 'img', styles: { 'float': 'left', 'margin': '0 10px 0 10px' } },
+          { title: 'Image Right', selector: 'img', styles: { 'float': 'right', 'margin': '0 0 10px 10px' } },
+        ]
+      });
+
+
+      // url conversion vantaw
+
+      var toolbar = '';
+      toolbar += `undo redo | bold italic underline strikethrough |
+        fontselect fontsizeselect formatselect |
+        alignleft aligncenter alignright alignjustify |
+        outdent indent |
+        numlist bullist | forecolor backcolor removeformat |`;
+      toolbar += `fullscreen | link insertfile image media table | codesample template | styleselect |`;
+      // toolbar += `pagebreak | charmap emoticons | save print | ltr rtl |`
+      toolbar += `preview code`;
+
+      var plugins = [
+        `print autosave save`,
+        `paste searchreplace`,
+        `noneditable`,
+        `visualblocks visualchars preview fullscreen`,
+        `image imagetools link autolink media template codesample table`,
+        `charmap emoticons hr`,
+        `pagebreak nonbreaking anchor toc insertdatetime`,
+        `advlist lists textpattern`,
+        `importcss directionality quickbars`,
+        `code wordcount`,
+        `help`,
+      ];
+
+      tinymce.init({
+        selector:'#content3',
+        height: 300,
+
+        plugins: plugins,
+        menubar: 'file edit view insert format tools table help',
+        toolbar: toolbar,
+
+        content_css: [
+          '//www.tiny.cloud/css/codepen.min.css',
+          '//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+        ],
+        content_css_cors: true,
+        importcss_append: true,
+
+        autosave_ask_before_unload: true,
+
+        relative_urls : false,
+        remove_script_host : false,
+        convert_urls : true,
+
+        toolbar_sticky: true,
+        toolbar_mode: 'sliding',
+
+        contextmenu: 'link image imagetools table | undo redo | help',
+        quickbars_selection_toolbar: 'bold italic underline | formatselect | quicklink blockquote | h2 h3 quickimage quicktable',
+        quickbars_insert_toolbar: 'image quicktable media codesample',
+
+        imagetools_cors_hosts: ['picsum.photos'],
+        image_class_list: [
+          { title: 'Responsive Image', value: 'img-fluid' },
+          { title: 'Image thumbnails', value: 'img-thumbnail' },
+          { title: 'None', value: '' },
+        ],
+        image_caption: true,
+        image_dimensions: false,
+        image_advtab: true,
+
+        table_default_attributes: {'class': 'table table-bordered'},
+        table_default_styles: {},
+        table_class_list: [
+            {title: 'None', value: ''},
+            {title: 'Table Bordered', value: 'table table-bordered'},
+        ],
+
+        templates: [
+          {
+            title: 'Example Title',
+            description: 'Example Description',
+            content: `Example Template`
+          },
+        ],
+
+        style_formats: [
+          {
+            title: 'Resize Image',
+            selector: 'img',
+            styles: {
+              'max-height' : '150px',
+              'width' : 'auto',
+            }
+          },
+        ],
+
+        init_instance_callback: function(editor) {
+          editor.on('keyup', function(e) {
+            // var elementId = e.target.attributes['data-id'].value;
+
+            // var content = e.target.innerHTML;
+            // if (content == '<p><br></p>') {
+            //   content = '';
+            // }
+            // if (content == '<p><br data-mce-bogus="1"></p>') {
+            //   content = '';
+            // }
+
+            // $('#' + elementId).val(content);
+            // pristine.validate('#' + elementId);
+
+            updateOriginalTextArea(e)
+          });
+        }
+      });
+
+      function updateOriginalTextArea(e) {
+        var elementId = e.target.attributes['data-id'].value;
+
+        var content = e.target.innerHTML;
+        if (content == '<p><br></p>') {
+          content = '';
+        }
+        if (content == '<p><br data-mce-bogus="1"></p>') {
+          content = '';
+        }
+
+        $('#' + elementId).val(content);
+        validateElement('#' + elementId, pristine);
+      }
+
+      function validateElement(elm, validator){
+        validator.validate(elm);
+      }
+
+      /**
+       * textarea not updated after tinymce editor changed
+       * it caused textarea passed validation when blank
+       * to prevent it wew need to check
+       * if textarea updated and have same value with tinymce editor
+       */
+      function checkTinymce(textareaId) {
+        var isValid = true;
+        var texteditorContent = tinymce.get(textareaId).getContent();
+        var textareaContent = $("#" + textareaId).val();
+        if (!texteditorContent) {
+          if (textareaContent) {
+            console.log('textarea and texteditor have different value')
+            isValid = false;
+          }
+        }
+
+        return isValid;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /**
+         * textarea not updated after tinymce editor changed
+         * it caused textarea passed validation when blank
+         * to prevent it wew need to check
+         * if textarea updated and have same value with tinymce editor
+         *
+         * if textarea and tinymce editor have different value
+         * stop and wait until have same value
+         * if textarea and tinymce editor have same value
+         * continue
+         */
+        var isTexteditorValid = checkTinymce('content3');
+        if(!isTexteditorValid){
+          return false;
+        }
+
+        var valid = pristine.validate();
+        // alert('Form is valid: ' + valid);
+        if(valid){
+          var inputs = $(this).serializeArray()
+          console.log(inputs)
+          console.log('Form submitted');
+        } else {
+          console.log('There are errors on the form');
+        }
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>

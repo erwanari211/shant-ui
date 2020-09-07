@@ -1,0 +1,30 @@
+.tox.tox-tinymce {
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+
+  .tox-editor-container
+  .tox-menubar,
+  .tox-toolbar-overlord,
+  .tox-sidebar-wrap,
+  .tox-edit-area,
+  .tox-statusbar
+  {
+    border-color: $input-border-color;
+  }
+}
+
+.form-group.has-success {
+  .tox.tox-tinymce {
+    border-color: $form-feedback-valid-color;
+  }
+}
+
+.form-group.has-danger {
+  .tox.tox-tinymce {
+    border-color: $form-feedback-invalid-color;
+  }
+}
+
+.tox-notifications-container {
+  display: none;
+}
