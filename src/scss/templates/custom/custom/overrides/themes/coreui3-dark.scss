@@ -1,0 +1,52 @@
+/**
+ * CoreUI 3 Dark
+ * coreui3-dark
+ */
+@if $overridesTheme == 'coreui3-dark' {
+  .app-body {
+    color: #e1e1e1;
+
+    .main {
+      // top breadcrumb
+      &> .breadcrumb {
+        color: rgba(255,255,255,.75);
+        background-color: #2c2c34;
+        border-bottom-color: transparent;
+
+        a:hover {
+          color: rgba(255,255,255,.9);
+        }
+
+        .breadcrumb-item.active {
+          color: #8a93a2;
+        }
+      }
+
+      // card
+      .card {
+        background-color: #23242d;
+        border-color: #181924;
+      }
+
+      .card-header {
+        background-color: #20202a;
+        border-color: #181924;
+      }
+
+    }
+  }
+
+  // footer
+  .app-footer {
+    color: #e1e1e1;
+    background: #1e1e29;
+    border-top: 1px solid #181924;
+  }
+
+  // form
+  .form-control {
+    color: #e1e1e1;
+    background-color: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.15);
+  }
+}

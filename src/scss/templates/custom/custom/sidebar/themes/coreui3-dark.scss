@@ -1,0 +1,22 @@
+/**
+ * CoreUI 3
+ * coreui3-dark
+ */
+@if $sidebarTheme == 'coreui3-dark' {
+  $custom-sidebar-bg: #2c2c34;
+  $custom-sidebar-color: #e1e1e1;
+
+  $custom-sidebar-nav-title-color: #e1e1e1;
+
+  $custom-sidebar-nav-link-hover-bg: #4638c2;
+  $custom-sidebar-nav-link-hover-color: #fff;
+
+  $custom-sidebar-nav-link-active-bg: rgba(255,255,255,.05);
+  $custom-sidebar-nav-link-active-color: #fff;
+
+  $custom-sidebar-nav-dropdown-bg: #2c2c34;
+  $custom-sidebar-nav-dropdown-color: #e1e1e1;
+
+  $custom-sidebar-border-right: 1px solid #2c2c34;
+  $custom-sidebar-nav-dropdown-indicator: $sidebar-nav-dropdown-indicator;
+}

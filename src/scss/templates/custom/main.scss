@@ -2,6 +2,7 @@
 
 @import "custom/sidebar/main";
 @import "custom/navbar/main";
+@import "custom/overrides/main";
 
 .app-header {
     border-bottom: 1px solid darken($custom-navbar-bg, 10%);
