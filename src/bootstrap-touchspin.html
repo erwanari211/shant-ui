@@ -25,6 +25,7 @@
     <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.css">
 
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
@@ -57,64 +58,28 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">Additional Pages</div>
+                  <div class="card-header">Header</div>
                   <div class="card-body">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="list-group">
-                          <a class="list-group-item list-group-item-action"
-                            href="datatables.html"
-                            target="_blank">
-                            Datatables
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="datetime-picker.html"
-                            target="_blank">
-                            Datetime Picker
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-validation.html"
-                            target="_blank">
-                            Form Validation
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="pretty-checkbox.html"
-                            target="_blank">
-                            Pretty Checkbox
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="quill.html"
-                            target="_blank">
-                            Quill
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="select2.html"
-                            target="_blank">
-                            Select2
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="tinymce5.html"
-                            target="_blank">
-                            TinyMCE 5
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="toastr.html"
-                            target="_blank">
-                            Toastr
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="bootstrap-touchspin.html"
-                            target="_blank">
-                            Bootstrap Touchspin
-                          </a>
+                        <form id="main-form">
+                          <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" class="form-control" required>
+                          </div>
 
+                          <div class="form-group">
+                            <label for="qty">Qty</label>
+                            <input type="text" name="qty" id="qty" class="form-control"
+                              data-pristine-type="number"
+                              value="10"
+                              required>
+                          </div>
 
-                          <a class="list-group-item list-group-item-action"
-                            href="#"
-                            target="_blank">
-                            Other Page
-                          </a>
-                        </div>
+                          <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -138,6 +103,74 @@
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
 
     <!-- Plugins and scripts required by this view-->
+    <script src="https://combinatronics.com/Sha256/Pristine/master/dist/pristine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var form = document.getElementById("main-form");
+        var pristine = new Pristine(form);
+
+        var qtyInput = $("#qty").TouchSpin({
+          initval: 0,
+          min: 0,
+          max: 100,
+          // step: 0.1,
+          // decimals: 2,
+          // boostat: 5,
+          // maxboostedstep: 10,
+          prefix: '$',
+          postfix: '%',
+          buttondown_class: "btn btn-danger",
+          buttonup_class: "btn btn-primary",
+          verticalupclass:	'fa fa-chevron-up',
+        });
+
+
+        fixTouchspinInput(qtyInput)
+
+        /**
+         * bootstrap touchspin have a bug
+         * when input is empty, then we click touchspin ( + / - )
+         * it will add value 50
+         * it is fixed so it will insert 0 insetead of 50
+         *
+         * This input use text input instead of number
+         * and not immediately convert input to number
+         * for example if we input 'foo' then blur input
+         * it will converted to 0
+         * but if we type 'foo' then press enter,
+         * 'foo' will be submitted to form
+         */
+        function fixTouchspinInput(elm) {
+          $(elm).on("change keyup touchspin.on.startspin", function(e) {
+            var currentVal = $(this).val();
+
+            var isNumber = !isNaN(currentVal);
+            if (!isNumber) {
+              $(this).val(0)
+            }
+
+            if (currentVal.trim() == '') {
+              $(this).val(0)
+              pristine.validate($(this));
+            }
+          });
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var valid = pristine.validate();
+          // alert('Form is valid: ' + valid);
+          if(valid){
+            var inputs = $(this).serializeArray()
+            console.log(inputs)
+            console.log('Form submitted');
+          } else {
+            console.log('There are errors on the form');
+          }
+        });
+      });
+    </script>
 
     <script>
       let includeTags = document.getElementsByTagName("include");
