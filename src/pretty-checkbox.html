@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"> -->
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <form id="main-form">
+                          <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" class="form-control" required>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="content">Description</label>
+                            <textarea name="content" id="content" class="form-control" required></textarea>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="">Genre</label>
+                            <div class="checkbox-group">
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="action" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Action</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="adventure" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Adventure</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="comedy" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Comedy</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="drama" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Drama</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="fantasy" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Fantasy</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="romance" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Romance</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="school" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>School</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-curve">
+                                <input type="checkbox" name="genre[]" min="3"
+                                  value="slice of life" />
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Slice of Life</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="">Type</label>
+                            <div class="radio-group">
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="type" required value="tv">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>TV</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="type" required value="ova">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>OVA</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="type" required value="movie">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Movie</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="type" required value="special">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Special</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="">Source</label>
+                            <div class="radio-group">
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="source" required value="manga">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Manga</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="source" required value="light novel">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Light novel</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="source" required value="game">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Game</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="source" required value="original">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Original</label>
+                                </div>
+                              </div>
+
+                              <div class="pretty p-icon p-round">
+                                <input type="radio" name="source" required value="other">
+                                <div class="state p-primary-o">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Other</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="">Status</label>
+                            <div>
+                              <div class="pretty p-icon p-toggle p-plain">
+                                <input type="checkbox" name="completed" />
+                                <div class="state p-info-o p-off">
+                                  <i class="icon fa fa-play"></i>
+                                  <label>Ongoing</label>
+                                </div>
+                                <div class="state p-success-o p-on">
+                                  <i class="icon fa fa-check"></i>
+                                  <label>Completed</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://combinatronics.com/Sha256/Pristine/master/dist/pristine.js"></script>
+    <script>
+      var form = document.getElementById("main-form");
+      var pristine = new Pristine(form);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var valid = pristine.validate();
+        // alert('Form is valid: ' + valid);
+        if(valid){
+          var inputs = $(this).serializeArray()
+          console.log(inputs)
+          console.log('Form submitted');
+        } else {
+          console.log('There are errors on the form');
+        }
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>

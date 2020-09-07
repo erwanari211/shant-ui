@@ -75,6 +75,7 @@
     "pace-progress": "1.0.2",
     "perfect-scrollbar": "^1.4.0",
     "popper.js": "^1.15.0",
+    "pretty-checkbox": "^3.0.3",
     "regenerator-runtime": "^0.13.2",
     "simple-line-icons": "2.4.1"
   },
