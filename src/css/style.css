@@ -16574,6 +16574,10 @@ body {
 /**
  * metronic demo 1
  */
+/**
+ * CoreUI 3
+ * coreui3-dark
+ */
 .sidebar {
   display: -ms-flexbox;
   display: flex;
@@ -17300,6 +17304,9 @@ body {
 /**
  * Dark Navbar
  */
+/**
+ * coreui3-dark
+ */
 .navbar {
   display: -ms-flexbox;
   display: flex;
@@ -17845,6 +17852,10 @@ body {
   }
 }
 
+/**
+ * CoreUI 3 Dark
+ * coreui3-dark
+ */
 .app-header {
   border-bottom: 1px solid #307095;
 }
