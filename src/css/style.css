@@ -16437,6 +16437,42 @@ body {
   outline-color: transparent;
 }
 
+.form-group.has-success .select2-container .select2-selection.select2-selection--single,
+.form-group.has-success .select2-container .select2-selection.select2-selection--multiple {
+  border-color: #28a745;
+}
+
+.form-group.has-success .select2-container.select2-container--open .select2-dropdown {
+  border-color: #28a745;
+}
+
+.form-group.has-success .select2-container .select2-search--dropdown {
+  padding: 8px;
+}
+
+.form-group.has-success .select2-container .select2-search--dropdown .select2-search__field,
+.form-group.has-success .select2-container .select2-search--dropdown .select2-search__field:focus {
+  border-color: #28a745;
+}
+
+.form-group.has-danger .select2-container .select2-selection.select2-selection--single,
+.form-group.has-danger .select2-container .select2-selection.select2-selection--multiple {
+  border-color: #dc3545;
+}
+
+.form-group.has-danger .select2-container.select2-container--open .select2-dropdown {
+  border-color: #dc3545;
+}
+
+.form-group.has-danger .select2-container .select2-search--dropdown {
+  padding: 8px;
+}
+
+.form-group.has-danger .select2-container .select2-search--dropdown .select2-search__field,
+.form-group.has-danger .select2-container .select2-search--dropdown .select2-search__field:focus {
+  border-color: #dc3545;
+}
+
 .form-group.has-success .form-control {
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
