@@ -1,0 +1,34 @@
+.custom-file-container__custom-file__custom-file-control {
+  border-color: $input-border-color;
+  color: $input-color;
+}
+
+.custom-file-container__custom-file__custom-file-control__button {
+  border-left-color: $input-border-color;
+  background-color: $input-group-addon-bg;
+  color: $input-group-addon-color;
+}
+
+.custom-file-container__image-preview {
+  margin-bottom: 1em;
+}
+
+.form-group.has-danger .custom-file-container__custom-file__custom-file-control {
+  border-color: $form-feedback-invalid-color;
+}
+
+.form-group.has-success .custom-file-container__custom-file__custom-file-control {
+  border-color: $form-feedback-valid-color;
+}
+
+.custom-file-container__image-preview.single-image {
+  padding: $thumbnail-padding;
+  background-color: $thumbnail-bg;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
+  @include border-radius($thumbnail-border-radius);
+  @include box-shadow($thumbnail-box-shadow);
+
+  width: 10em;
+  height: 10em;
+  overflow: hidden;
+}
