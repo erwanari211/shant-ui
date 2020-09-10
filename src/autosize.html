@@ -57,74 +57,31 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">Additional Pages</div>
+                  <div class="card-header">Header</div>
                   <div class="card-body">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="list-group">
-                          <a class="list-group-item list-group-item-action"
-                            href="datatables.html"
-                            target="_blank">
-                            Datatables
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="datetime-picker.html"
-                            target="_blank">
-                            Datetime Picker
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-validation.html"
-                            target="_blank">
-                            Form Validation
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="pretty-checkbox.html"
-                            target="_blank">
-                            Pretty Checkbox
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="quill.html"
-                            target="_blank">
-                            Quill
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="select2.html"
-                            target="_blank">
-                            Select2
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="tinymce5.html"
-                            target="_blank">
-                            TinyMCE 5
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="toastr.html"
-                            target="_blank">
-                            Toastr
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="bootstrap-touchspin.html"
-                            target="_blank">
-                            Bootstrap Touchspin
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="autosize.html"
-                            target="_blank">
-                            Autosize
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-repeater.html"
-                            target="_blank">
-                            Form Repeater
-                          </a>
+                        <form id="main-form">
+                          <div class="form-group">
+                            <label for="normal">Normal</label>
+                            <textarea class="form-control"
+                              name="normal" id="normal"
+                              required
+                              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odit et magnam ipsa maxime architecto in quisquam blanditiis quos vitae aperiam eum dolorum consequuntur cum beatae libero ex, similique debitis consequatur pariatur nobis sunt illum quis. Maxime eligendi maiores cupiditate, accusantium aperiam nemo voluptas libero minus, mollitia odit labore culpa! </textarea>
+                          </div>
 
+                          <div class="form-group">
+                            <label for="autosize">Autosize</label>
+                            <textarea class="form-control"
+                              name="autosize" id="autosize"
+                              required
+                              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odit et magnam ipsa maxime architecto in quisquam blanditiis quos vitae aperiam eum dolorum consequuntur cum beatae libero ex, similique debitis consequatur pariatur nobis sunt illum quis. Maxime eligendi maiores cupiditate, accusantium aperiam nemo voluptas libero minus, mollitia odit labore culpa! </textarea>
+                          </div>
 
-                          <a class="list-group-item list-group-item-action"
-                            href="#"
-                            target="_blank">
-                            Other Page
-                          </a>
-                        </div>
+                          <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -148,6 +105,29 @@
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
 
     <!-- Plugins and scripts required by this view-->
+    <script src="https://combinatronics.com/Sha256/Pristine/master/dist/pristine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.js"></script>
+    <script>
+      $(document).ready(function () {
+        var form = document.getElementById("main-form");
+        var pristine = new Pristine(form);
+
+        autosize($('#autosize'));
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var valid = pristine.validate();
+          // alert('Form is valid: ' + valid);
+          if(valid){
+            var inputs = $(this).serializeArray()
+            console.log(inputs)
+            console.log('Form submitted');
+          } else {
+            console.log('There are errors on the form');
+          }
+        });
+      });
+    </script>
 
     <script>
       let includeTags = document.getElementsByTagName("include");
