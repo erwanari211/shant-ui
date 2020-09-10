@@ -17542,6 +17542,12 @@ body {
   overflow: hidden;
 }
 
+.rating-yellow .br-theme-fontawesome-stars-o .br-widget a.br-active:after,
+.rating-yellow .br-theme-fontawesome-stars-o .br-widget a.br-selected:after,
+.rating-yellow .br-theme-fontawesome-stars-o .br-widget a.br-fractional:after {
+  color: #EDB867;
+}
+
 /**
  * AdminLTE sidebar Dark
  * adminlte-sidebar-dark
