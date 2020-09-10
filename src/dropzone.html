@@ -25,6 +25,8 @@
     <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/basic.min.css">
 
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
@@ -57,84 +59,15 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">Additional Pages</div>
+                  <div class="card-header">Header</div>
                   <div class="card-body">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="list-group">
-                          <a class="list-group-item list-group-item-action"
-                            href="datatables.html"
-                            target="_blank">
-                            Datatables
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="datetime-picker.html"
-                            target="_blank">
-                            Datetime Picker
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-validation.html"
-                            target="_blank">
-                            Form Validation
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="pretty-checkbox.html"
-                            target="_blank">
-                            Pretty Checkbox
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="quill.html"
-                            target="_blank">
-                            Quill
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="select2.html"
-                            target="_blank">
-                            Select2
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="tinymce5.html"
-                            target="_blank">
-                            TinyMCE 5
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="toastr.html"
-                            target="_blank">
-                            Toastr
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="bootstrap-touchspin.html"
-                            target="_blank">
-                            Bootstrap Touchspin
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="autosize.html"
-                            target="_blank">
-                            Autosize
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="clipboard.html"
-                            target="_blank">
-                            Clipboard
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="dropzone.html"
-                            target="_blank">
-                            Dropzone
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-repeater.html"
-                            target="_blank">
-                            Form Repeater
-                          </a>
-
-
-                          <a class="list-group-item list-group-item-action"
-                            href="#"
-                            target="_blank">
-                            Other Page
-                          </a>
-                        </div>
+                        <form action="/file-upload" class="dropzone">
+                          <div class="fallback">
+                            <input name="file" type="file" multiple />
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -158,6 +91,16 @@
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
 
     <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var myDropzone = $("#file").dropzone({
+          url: "/file/post",
+          paramName: "file",
+          maxFilesize: 2,
+        });
+      });
+    </script>
 
     <script>
       let includeTags = document.getElementsByTagName("include");
