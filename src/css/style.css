@@ -17505,6 +17505,10 @@ body {
   }
 }
 
+.dropzone {
+  border: 2px dashed #e4e7ea;
+}
+
 /**
  * AdminLTE sidebar Dark
  * adminlte-sidebar-dark
