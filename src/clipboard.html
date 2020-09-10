@@ -57,78 +57,47 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">Additional Pages</div>
+                  <div class="card-header">Header</div>
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-sm-12">
-                        <div class="list-group">
-                          <a class="list-group-item list-group-item-action"
-                            href="datatables.html"
-                            target="_blank">
-                            Datatables
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="datetime-picker.html"
-                            target="_blank">
-                            Datetime Picker
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-validation.html"
-                            target="_blank">
-                            Form Validation
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="pretty-checkbox.html"
-                            target="_blank">
-                            Pretty Checkbox
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="quill.html"
-                            target="_blank">
-                            Quill
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="select2.html"
-                            target="_blank">
-                            Select2
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="tinymce5.html"
-                            target="_blank">
-                            TinyMCE 5
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="toastr.html"
-                            target="_blank">
-                            Toastr
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="bootstrap-touchspin.html"
-                            target="_blank">
-                            Bootstrap Touchspin
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="autosize.html"
-                            target="_blank">
-                            Autosize
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="clipboard.html"
-                            target="_blank">
-                            Clipboard
-                          </a>
-                          <a class="list-group-item list-group-item-action"
-                            href="form-repeater.html"
-                            target="_blank">
-                            Form Repeater
-                          </a>
+                      <div class="col-sm-6 col-md-8">
+                        <div class="input-group">
+                          <!-- Target -->
+                          <input type="text" id="foo"
+                          value="https://github.com/zenorocha/clipboard.js"
+                          class="form-control">
 
+                          <!-- Trigger -->
+                          <span class="input-group-btn input-group-append">
+                            <button class="btn btn-secondary clipboard" type="button"
+                              data-clipboard-target="#foo">
+                              <i class="fa fa-clipboard"></i>
+                            </button>
+                          </span>
+                        </div>
+                      </div>
 
-                          <a class="list-group-item list-group-item-action"
-                            href="#"
-                            target="_blank">
-                            Other Page
-                          </a>
+                      <div class="col-sm-6 col-md-4">
+                        <div class="form-group">
+                          <textarea class="form-control" name="content" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-6 col-md-8">
+                        <button class="btn btn-secondary clipboard" type="button"
+                          data-toggle="tooltip"
+                          data-trigger="click"
+                          title="Copied"
+                          data-clipboard-text="http://www.google.com">
+                          Click here to copy URL <i class="fa fa-clipboard"></i>
+                        </button>
+                      </div>
+
+                      <div class="col-sm-6 col-md-4">
+                        <div class="form-group">
+                          <textarea class="form-control" name="content" rows="3"></textarea>
                         </div>
                       </div>
                     </div>
@@ -153,6 +122,38 @@
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
 
     <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script>
+      var clipboard = new ClipboardJS('.clipboard');
+
+      $('.clipboard').tooltip({
+        trigger: 'click',
+      });
+
+      function setTooltip(elm, message) {
+        $(elm).tooltip('hide')
+          .attr('data-original-title', message)
+          .tooltip('show');
+      }
+
+      function hideTooltip(elm) {
+        setTimeout(function() {
+          $(elm).tooltip('hide');
+        }, 1000);
+      }
+
+      clipboard.on('success', function(e) {
+        var elm = $(e.trigger)
+        setTooltip(elm, 'Copied!');
+        hideTooltip(elm);
+      });
+
+      clipboard.on('error', function(e) {
+        var elm = $(e.trigger)
+        setTooltip(elm, 'Failed!');
+        hideTooltip(elm);
+      });
+    </script>
 
     <script>
       let includeTags = document.getElementsByTagName("include");
