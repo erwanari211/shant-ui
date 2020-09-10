@@ -1,0 +1,11 @@
+.rating-yellow {
+  .br-theme-fontawesome-stars-o {
+    .br-widget {
+      a.br-active:after,
+      a.br-selected:after,
+      a.br-fractional:after {
+        color: #EDB867;
+      }
+    }
+  }
+}
