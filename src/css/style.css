@@ -17509,6 +17509,39 @@ body {
   border: 2px dashed #e4e7ea;
 }
 
+.custom-file-container__custom-file__custom-file-control {
+  border-color: #e4e7ea;
+  color: #5c6873;
+}
+
+.custom-file-container__custom-file__custom-file-control__button {
+  border-left-color: #e4e7ea;
+  background-color: #f0f3f5;
+  color: #5c6873;
+}
+
+.custom-file-container__image-preview {
+  margin-bottom: 1em;
+}
+
+.form-group.has-danger .custom-file-container__custom-file__custom-file-control {
+  border-color: #dc3545;
+}
+
+.form-group.has-success .custom-file-container__custom-file__custom-file-control {
+  border-color: #28a745;
+}
+
+.custom-file-container__image-preview.single-image {
+  padding: 0.25rem;
+  background-color: #e4e5e6;
+  border: 1px solid #c8ced3;
+  border-radius: 0.25rem;
+  width: 10em;
+  height: 10em;
+  overflow: hidden;
+}
+
 /**
  * AdminLTE sidebar Dark
  * adminlte-sidebar-dark
