@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <style>
+      .element {
+        height: 400px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+    </style>
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div id="element-1" class="element">
+                          element 1 <br>
+                          <span class="timer"
+                            data-from="0"
+                            data-to="777"
+                            data-speed="5000"
+                            data-refresh-interval="50">
+                          </span>
+                        </div>
+                        <div id="element-2" class="element">
+                          element 2
+                        </div>
+                        <div id="element-3" class="element">
+                          element 3 <br>
+                          <span class="timer"
+                            data-from="0"
+                            data-to="100"
+                            data-speed="5000"
+                            data-refresh-interval="50">
+                          </span>
+                        </div>
+                        <div id="element-4" class="element">
+                          element 4
+                        </div>
+                        <div id="element-5" class="element">
+                          element 5 <br>
+                          <span class="timer"
+                            data-from="0"
+                            data-to="999"
+                            data-speed="5000"
+                            data-refresh-interval="50">
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var elements = $('.element')
+        $.each(elements, function (idx, elm) {
+          var inview = new Waypoint.Inview({
+            element: $(elm)[0],
+            enter: function(direction) {
+              if (direction == 'down') {
+                $(elm).find('.timer').hide().fadeIn(1000).countTo('restart');
+              }
+
+              // console.log('Enter triggered with direction ' + direction)
+            },
+            entered: function(direction) {
+              if (direction == 'up') {
+                $(elm).find('.timer').hide().fadeIn(1000).countTo('restart');
+              }
+
+              // console.log('Entered triggered with direction ' + direction)
+            },
+            exit: function(direction) {
+              // console.log('Exit triggered with direction ' + direction)
+            },
+            exited: function(direction) {
+              // if (direction == 'down') {
+              //   $(elm).find('.timer').countTo('stop');
+              // }
+              // if (direction == 'up') {
+              //   $(elm).find('.timer').countTo('stop');
+              // }
+
+              // console.log('Exited triggered with direction ' + direction)
+            }
+          })
+        });
+      });
+    </script>
+
+
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
