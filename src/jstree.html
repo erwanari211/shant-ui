@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.10/themes/default/style.min.css">
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div id="jstree_demo_div" class="mb-4">
+                          <ul>
+                            <li>
+                              <span>Root node 1</span>
+                              <ul>
+                                <li id="child_node_1">Child node 1</li>
+                                <li>Child node 2</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <span>Root node 2</span>
+                            </li>
+                            <li>
+                              <span>Root node 3</span>
+                              <ul>
+                                <li>
+                                  <a href="#" class="jstree-clicked">Child</a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li data-jstree='{"opened":true,"selected":true}'>
+                              <span>Root node 4</span>
+                              <ul>
+                                <li data-jstree='{"disabled":true}'>Disabled</li>
+                                <li data-jstree='{"icon":"//jstree.com/tree.png"}'>With Img</li>
+                                <li data-jstree='{"icon":"fa fa-star"}'>With Icon</li>
+                              </ul>
+                            </li>
+                            <li>
+                              Root node 5
+                              <ul>
+                                <li data-jstree='{"icon":"fa fa-star"}' data-draggable="1">Start</li>
+                                <li data-jstree='{"icon":"fa fa-star"}'>Finish</li>
+                                <li data-jstree='{"icon":"fa fa-star"}'>Other</li>
+                                <li data-jstree='{"icon":"fa fa-ban"}' data-draggable="0">Not Draggable</li>
+                                <li data-jstree='{"icon":"fa fa-star"}' data-draggable="1">Draggable</li>
+                                <li data-jstree='{"icon":"fa fa-ban"}' data-droppable="0">Not Droppable</li>
+                                <li data-jstree='{"icon":"fa fa-star"}' data-droppable="1">Droppable</li>
+                              </ul>
+                            </li>
+                            <li>
+                              Root node 6
+                              <ul>
+                                <li data-jstree='{"type":"folder"}'>Type Folder</li>
+                                <li data-jstree='{"type":"file"}'>Type File</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div id="using_json" class="mb-4">
+                        </div>
+
+                        <div class="my-2">
+                          <div class="form-group">
+                            <input type="text"
+                              class="form-control" name="search" id="search" placeholder="search">
+                          </div>
+                          <button id="get-data-btn" class="btn btn-primary">Get Tree Data</button>
+                          <button id="demo-btn" class="btn btn-primary">Demo button 1</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.10/jstree.min.js"></script>
+    <script>
+      $(function () {
+        $('#using_json').jstree({
+          'core' : {
+            'data' : [
+              'Simple root node',
+              {
+                'text' : 'Root node 2',
+                'state' : {
+                  'opened' : true,
+                  'selected' : true
+                },
+                'children' : [
+                  { 
+                    'text' : 'Child 1'
+                  },
+                  'Child 2'
+                ]
+              }
+            ]
+          }
+        });
+
+        $('#jstree_demo_div').jstree({
+          "core" : {
+            // "themes" : {
+            //   "name" : "aiueo"
+            // },
+            "multiple" : false,
+            "animation" : 0,
+            // "check_callback" : true,
+            'check_callback' : function (operation, node, node_parent, node_position, more) {
+              if (operation === 'move_node') {
+                var isDroppable = true
+                var attributes = node_parent['li_attr'];
+
+                // not root
+                if(typeof attributes != 'undefined'){
+                  // has data-droppable attribute
+                  if(typeof attributes['data-droppable'] != 'undefined'){
+                    isDroppable = attributes['data-droppable'] == 1
+                  }
+                }
+
+                return isDroppable
+              }
+
+              return true;
+            }
+          },
+          "state" : {
+            "key" : "demo-jstree"
+          },
+          "types" : {
+            "default" : {
+              "icon" : "fa fa-folder text-warning"
+            },
+            "folder" : {
+              "icon" : "fa fa-folder text-warning"
+            },
+            "file" : {
+              "icon" : "fa fa-file"
+            },
+          },
+          "plugins" : [
+            "checkbox",
+            "contextmenu",
+            "dnd",
+            "search",
+            "state",
+            "types",
+          ],
+          "checkbox" : {
+            "keep_selected_style" : true
+          },
+          "dnd" : {
+            "is_draggable" : function(node){
+              var isDraggable = true
+              var attributes = node[0]['li_attr'];
+
+              if(typeof attributes['data-draggable'] != 'undefined'){
+                isDraggable = attributes['data-draggable'] == 1
+              }
+              return isDraggable
+            },
+          }
+        });
+
+        $('#jstree_demo_div').on("changed.jstree", function (e, data) {
+          console.log(data.selected);
+          console.log(data);
+        });
+
+        var searchTimeout = false;
+        $('#search').keyup(function () {
+          if(searchTimeout) { clearTimeout(searchTimeout); }
+          searchTimeout = setTimeout(function () {
+            var v = $('#search').val();
+            $('#jstree_demo_div').jstree(true).search(v);
+          }, 250);
+        });
+
+        $('#demo-btn').on('click', function () {
+          $('#jstree_demo_div').jstree(true).select_node('child_node_1');
+          $('#jstree_demo_div').jstree('select_node', 'child_node_1');
+          $.jstree.reference('#jstree_demo_div').select_node('child_node_1');
+        });
+
+        $('#get-data-btn').on('click', function () {
+          var v = $('#jstree_demo_div').jstree(true).get_json('#', {flat:true})
+          console.log(v);
+
+          var v2 = $('#jstree_demo_div').jstree(true).get_json('#')
+          console.log(v2);
+        });
+      });
+    </script>
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
