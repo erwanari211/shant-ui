@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+      /* the slides */
+      .slick-slide {
+          margin: 0 10px;
+      }
+      /* the parent */
+      .slick-list {
+          margin: 0 -10px;
+      }
+
+      .slick-prev.slick-arrow {
+        left: 0;
+        z-index: 1;
+      }
+      .slick-prev.slick-arrow:before {
+        /* color: rgba(0, 0, 0, 0.5); */
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .slick-next.slick-arrow {
+        right: 0;
+        z-index: 1;
+      }
+      .slick-next.slick-arrow:before {
+        /* color: rgba(0, 0, 0, 0.5); */
+        color: rgba(255, 255, 255, 1);
+      }
+
+    </style>
+
+    <!-- Main styles for this application-->  
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="slider">
+                          <div class="item bg-success">
+                            <img data-lazy="https://picsum.photos/seed/picsum01/75/75"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 01 </span>
+                          </div>
+                          <div class="item bg-info">
+                            <img data-lazy="https://picsum.photos/seed/picsum02/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 02 </span>
+                          </div>
+                          <div class="item bg-danger">
+                            <img data-lazy="https://picsum.photos/seed/picsum03/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 03 </span>
+                          </div>
+                          <div class="item bg-success">
+                            <img data-lazy="https://picsum.photos/seed/picsum04/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 04 </span>
+                          </div>
+                          <div class="item bg-info">
+                            <img data-lazy="https://picsum.photos/seed/picsum05/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 05 </span>
+                          </div>
+                          <div class="item bg-danger">
+                            <img data-lazy="https://picsum.photos/seed/picsum06/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 06 </span>
+                          </div>
+                          <div class="item bg-success">
+                            <img data-lazy="https://picsum.photos/seed/picsum07/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 07 </span>
+                          </div>
+                          <div class="item bg-info">
+                            <img data-lazy="https://picsum.photos/seed/picsum08/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 08 </span>
+                          </div>
+                          <div class="item bg-danger">
+                            <img data-lazy="https://picsum.photos/seed/picsum09/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 09 </span>
+                          </div>
+                          <div class="item bg-success">
+                            <img data-lazy="https://picsum.photos/seed/picsum10/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 10 </span>
+                          </div>
+                          <div class="item bg-info">
+                            <img data-lazy="https://picsum.photos/seed/picsum11/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 11 </span>
+                          </div>
+                          <div class="item bg-danger">
+                            <img data-lazy="https://picsum.photos/seed/picsum12/75/75" 
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFBAMAAAB/QTvWAAAAFVBMVEXMzMyWlpaxsbG3t7e+vr7FxcWjo6PZoQRwAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEklEQVQImWNgQALKDgwMYQwMAAOLALoJbp2PAAAAAElFTkSuQmCC"
+                              alt="image">
+                            <span> 12 </span>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        // add random width
+        var item = $('.item');
+        $.each(item, function (idx, elm) { 
+          var min = 150;
+          var max = 300;
+          var num = Math.floor(Math.random() * max) + min;
+          $(elm).css('width', num + 'px');
+          $(elm).css('height', '150px');
+
+          var content = $(elm).html();
+          content += ' (' + num + 'px)'
+          $(elm).html(content);
+        });
+
+        $('.slider').slick({
+          infinite: true,
+          dots: true,
+          speed: 300,
+
+          lazyLoad: 'ondemand',
+
+          centerMode: true,
+          centerPadding: '60px',
+          variableWidth: true,
+
+          autoplay: false,
+          autoplaySpeed: 1000,
+
+          // slidesToShow: 1,
+          // slidesToScroll: 4,
+          adaptiveHeight: true,
+
+          nextArrow: '<button type="button" class="slick-next">Next</button>',
+
+          // responsive: [
+          //   {
+          //     breakpoint: 1024,
+          //     settings: {
+          //       slidesToShow: 3,
+          //       slidesToScroll: 3,
+          //       centerPadding: '40px',
+          //       infinite: true,
+          //       dots: true
+          //     }
+          //   },
+          //   {
+          //     breakpoint: 600,
+          //     settings: {
+          //       slidesToShow: 2,
+          //       slidesToScroll: 2,
+          //       centerPadding: '40px',
+          //     }
+          //   },
+          //   {
+          //     breakpoint: 480,
+          //     settings: {
+          //       slidesToShow: 1,
+          //       slidesToScroll: 1
+          //     }
+          //   }
+          // ],
+
+        });
+      });
+    </script>
+
+<script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
