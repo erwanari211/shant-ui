@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    <style>
+      #map { height: 360px; }
+    </style>
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div id="map"></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script>
+      // maps
+      var osm = {
+        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }
+
+      var Esri_WorldStreetMap = {
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+      }
+
+      var Esri_WorldImagery = {
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+      }
+
+      var Esri_NatGeoWorldMap = {
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',
+        attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
+      }
+
+      // tile layers
+      var tileLayers = []
+      tileLayers.osm                 = L.tileLayer(osm.url, {attribution: osm.attribution})
+      tileLayers.Esri_WorldStreetMap = L.tileLayer(Esri_WorldStreetMap.url, {attribution: Esri_WorldStreetMap.attribution})
+      tileLayers.Esri_WorldImagery   = L.tileLayer(Esri_WorldImagery.url, {attribution: Esri_WorldImagery.attribution})
+      tileLayers.Esri_NatGeoWorldMap = L.tileLayer(Esri_NatGeoWorldMap.url, {attribution: Esri_NatGeoWorldMap.attribution})
+
+      // map
+      var map = L.map('map', {
+        center: [-6.903429, 107.5030708],
+        zoom: 9,
+        layers: [tileLayers.osm]
+      })
+
+      // tile layers selector
+      var baseLayers = {
+        "OpenStreetMap"       : tileLayers.osm,
+        "Esri_WorldStreetMap" : tileLayers.Esri_WorldStreetMap,
+        "Esri_WorldImagery"   : tileLayers.Esri_WorldImagery,
+        "Esri_NatGeoWorldMap" : tileLayers.Esri_NatGeoWorldMap,
+      };
+      L.control.layers(baseLayers).addTo(map);
+
+      var targets = [
+        {lat: -6.8329663, long: 107.6035328, name: 'Farm House Susu Lembang'},
+        {lat: -6.7769018, long: 107.5817124, name: 'Kebun Teh Sukawana'},
+        {lat: -7.1575391, long: 107.3629825, name: 'Glamping Lakeside Rancabali'},
+        {lat: -6.9630187, long: 107.8801417, name: 'Curug Cinulang (Sindulang)'},
+        {lat: -6.7905639, long: 107.5804501, name: 'Curug Tilu Leuwi Opat'},
+        {lat: -6.7596162, long: 107.6010259, name: 'Gn. Tangkuban Parahu'},
+        {lat: -7.1661514, long: 107.4010453, name: 'Kawah Putih'},
+        {lat: -7.1672822, long: 107.3532956, name: 'Situ Patengan'},
+        {lat: -6.8565738, long: 107.6301847, name: 'Taman Hutan Raya Ir. H. Djuanda'},
+        {lat: -7.2088708, long: 107.6561122, name: 'Situ Cisanti'},
+        {lat: -6.8317315, long: 107.6536477, name: 'Curug Maribaya'},
+        {lat: -6.9056050, long: 107.5265719, name: 'Museum Geologi Bandung'},
+        {lat: -6.8246258, long: 107.6149219, name: 'Bosscha'},
+        {lat: -7.1348140, long: 107.4137663, name: 'Ciwidey Valley Hot Spring'},
+        {lat: -7.1381453, long: 107.3900279, name: 'Ranca upas'},
+        {lat: -6.9175586, long: 107.6071775, name: 'Jl. Braga'},
+        {lat: -6.8765078, long: 107.3400296, name: 'Sanghyang Heuleut'},
+        {lat: -6.7495215, long: 107.4764693, name: 'Sendang Geulis Kahuripan'},
+        {lat: -6.8669465, long: 107.6078972, name: 'Rabbit Town'},
+      ];
+
+      // for (let i = 0; i < targets.length; i++) {
+      //   var target = targets[i];
+      //   var marker = L.marker([target.lat, target.long]).addTo(map);
+      //   marker.bindPopup(target.name);
+      // }
+
+      var markers = L.markerClusterGroup();
+      var markerGroup = []
+
+      for (var i = 0; i < targets.length; i++) {
+        var target = targets[i]
+        var id = i
+        var name = target.name
+        var lat = target.lat
+        var long = target.long
+
+        var marker = L.marker(new L.LatLng(lat, long), { title: name })
+        var popup = name
+
+        marker.bindPopup(popup)
+        markers.addLayer(marker)
+      }
+
+      map.addLayer(markers)
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
