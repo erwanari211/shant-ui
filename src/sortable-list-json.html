@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--
+  * CoreUI - Free Bootstrap Admin Template
+  * @link https://coreui.io
+  * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+  * Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>CoreUI Free Bootstrap Admin Template</title>
+  <!-- Icons-->
+  <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+  <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <!-- <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- styles required by this view-->
+  <style>
+    .sortableListsContainer ul {
+      /*background-color : #eee;*/
+      padding : 0;
+      border : 1px solid #ddd;
+      list-style-type : none;
+    }
+
+    .sortableListsContainer li {
+      padding : 4px 8px 4px 40px;
+      border : 1px solid #ddd;
+      list-style-type : none;
+    }
+
+    .sortableListsContainer li div {
+      /*background-color:#eee;*/
+      padding : 4px;
+    }
+
+    div .s-l-opener:last-child {
+      margin-top: -30px;
+    }
+
+    ul ul {
+      margin-top: 10px;
+    }
+
+  </style>
+  <!-- Main styles for this application-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    // Shared ID
+    gtag('config', 'UA-118965717-3');
+    // Bootstrap ID
+    gtag('config', 'UA-118965717-5');
+  </script>
+</head>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <include src="partials/header.html"></include>
+  <div class="app-body">
+    <include src="partials/sidebar.html"></include>
+    <main class="main">
+      <include src="partials/breadcrumb.html"></include>
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="sortableListsContainer" id="myListContainer">
+                        <i class="fa fa-spinner fa-pulse"></i>
+                        Loading ...
+                      </div>
+
+                      <button class="btn btn-primary" id="toArrBtn">To array</button>
+                      <button class="btn btn-primary" id="toHierBtn">To hierarchy</button>
+                      <button class="btn btn-primary" id="toStrBtn">To string</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          </div>
+          <!-- /.row-->
+        </div>
+      </div>
+    </main>
+    <include src="partials/aside.html"></include>
+  </div>
+  <include src="partials/footer.html"></include>
+  <!-- CoreUI and necessary plugins-->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/pace-progress/pace.min.js"></script>
+  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+  <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+  <!-- Plugins and scripts required by this view-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-sortable-lists@2.0.1/jquery-sortable-lists.min.js"></script>
+  <script>
+    var sectionIcons = {
+      'folder': ` <span class="section-icon"> <i class="fa-fw fa fa-folder"></i> </span> `,
+      'document': ` <span class="section-icon"> <i class="fa-fw far fa-file-alt"></i> </span> `,
+      'book': ` <span class="section-icon"> <i class="fa-fw fa fa-book"></i> </span> `,
+      'character': ` <span class="section-icon"> <i class="fa-fw fa fa-user-circle"></i> </span> `,
+      'idea': ` <span class="section-icon"> <i class="fa-fw fas fa-lightbulb"></i> </span> `,
+      'note': ` <span class="section-icon"> <i class="fa-fw fa fa-sticky-note"></i> </span> `,
+      'place': ` <span class="section-icon"> <i class="fa-fw fa fa-marked-alt"></i> </span> `,
+      'list': ` <span class="section-icon"> <i class="fa-fw fa fa-clipboard-list"></i> </span> `,
+      'video': ` <span class="section-icon"> <i class="fa-fw fa fa-video"></i> </span> `,
+      'image': ` <span class="section-icon"> <i class="fa-fw fa fa-images"></i> </span> `,
+      'info': ` <span class="section-icon"> <i class="fa-fw fa fa-info-circle"></i> </span> `,
+    };
+
+    data = [
+      {
+        "id":1,
+        "title":"Pembukaan",
+        "content":"<p>Ini pembukaan<\/p>",
+        "parent_id":0,
+        "childs":0,
+        "sort_order":1,
+        "is_locked":0,
+        "icon":null,
+        "children":[
+
+        ]
+      },
+      {
+        "id":501,
+        "user_id":1,
+        "title":"Bab 1",
+        "content":null,
+        "parent_id":0,
+        "childs":0,
+        "sort_order":2,
+        "is_locked":0,
+        "icon":null,
+        "children":[
+          {
+            "id":503,
+            "user_id":1,
+            "title":"Bab 1.1",
+            "content":"<p>Ini bab 1.1<\/p>\n<p>ini kontent&nbsp;bab 1.1<\/p>",
+            "parent_id":501,
+            "childs":0,
+            "sort_order":3,
+            "is_locked":1,
+            "icon":null,
+            "children":[
+
+            ]
+          },
+          {
+            "id":504,
+            "user_id":1,
+            "title":"Bab 1.2",
+            "content":"<p>Ini bab 1.2<\/p>",
+            "parent_id":501,
+            "childs":0,
+            "sort_order":4,
+            "is_locked":0,
+            "icon":null,
+            "children":[
+
+            ]
+          }
+        ]
+      },
+      {
+        "id":502,
+        "user_id":1,
+        "title":"Bab 2",
+        "content":null,
+        "parent_id":0,
+        "childs":0,
+        "sort_order":5,
+        "is_locked":0,
+        "icon":null,
+        "children":[
+          {
+            "id":505,
+            "user_id":1,
+            "title":"Bab 2.1",
+            "content":"<p>bab 2.1<\/p>\n<p><img class=\"lazy\" src=\"http:\/\/localhost:8000\/uploads\/galleries-55-gambar-1-bKpipuA2-1598858780.jpg\" alt=\"\" width=\"300\" height=\"300\" \/><\/p>",
+            "parent_id":502,
+            "childs":0,
+            "sort_order":6,
+            "is_locked":0,
+            "icon":null,
+            "children":[
+
+            ]
+          },
+          {
+            "id":506,
+            "user_id":1,
+            "title":"Bab 2.2",
+            "content":null,
+            "parent_id":502,
+            "childs":0,
+            "sort_order":7,
+            "is_locked":0,
+            "icon":null,
+            "children":[
+              {
+                "id":5061,
+                "user_id":1,
+                "title":"Bab 2.2",
+                "content":null,
+                "parent_id":502,
+                "childs":0,
+                "sort_order":7,
+                "is_locked":0,
+                "icon":null,
+                "children":[
+
+                ]
+              },
+              {
+                "id":5062,
+                "user_id":1,
+                "title":"Bab 2.2",
+                "content":null,
+                "parent_id":502,
+                "childs":0,
+                "sort_order":7,
+                "is_locked":0,
+                "icon":null,
+                "children":[
+
+                ]
+              },
+            ]
+          }
+        ]
+      }
+    ]
+
+    var maxNestingDepth = 7;
+    var rootList = 'ul#myList' // for checking list nesting
+
+    var options = {
+      opener: {
+        active: true,
+        as: 'html',
+        close: `
+          <span class="btn btn-sm btn-danger">
+            <i class="fa fa-minus"></i>
+          </span>
+        `,
+        open: `
+          <span class="btn btn-sm btn-success">
+            <i class="fa fa-plus"></i>
+          </span>
+        `,
+        openerCss: {
+          'display': 'inline-block', // Default value
+          'float': 'left', // Default value
+          'width': '28px',
+          'height': '28px',
+          'margin-left': '-40px',
+          'margin-right': '0px',
+          'background-position': 'center center', // Default value
+          'background-repeat': 'no-repeat' // Default value
+        },
+      },
+
+      placeholderCss: {'background-color':'lightyellow', 'border':'1px dashed white'},
+      hintCss: {'background-color':'lightgreen', 'border':'1px dashed white'},
+
+      insertZone: 50,
+      insertZonePlus: true,
+      ignoreClass: 'clickable',
+
+      isAllowed: function(currEl, hint, target) {
+        var maxLevel = maxNestingDepth;
+        var allowedToMove = true;
+
+        var levelToRoot = 0;
+        var levelToDeepest = 0;
+
+        levelToRoot = hint.parentsUntil(rootList).filter('ul').length;
+
+        var children = $(currEl).find('ul');
+        var depth = 0;
+        while ( children.length > 0 ) {
+          children = children.find('ul').children();
+          depth += 1;
+        }
+        levelToDeepest = depth;
+
+        if (levelToRoot >= (maxLevel)) {
+          allowedToMove = false;
+        }
+
+        if ((levelToRoot + levelToDeepest) >= (maxLevel)) {
+          allowedToMove = false;
+        }
+
+        // is locked
+        var isLocked = $(currEl).attr('data-is-locked');
+        if (isLocked == "true") {
+          allowedToMove = false;
+        }
+        var isLockedTarget = $(target).attr('data-is-locked');
+        if (isLockedTarget == "true") {
+          allowedToMove = false;
+        }
+
+        if(!allowedToMove) {
+          hint.css('background-color', 'lightpink');
+          return false;
+        } else {
+          hint.css('background-color', 'lightgreen');
+          return true;
+        }
+      }
+    }
+
+    function buildList(data, target, rootId = 'myList') {
+      var output = '';
+
+      $(target).html('Loading ....');
+      var toggleOpenBtn = $('[data-action="toggle-open-section"]');
+      var dataValue = toggleOpenBtn.attr('data-value');
+      var isOpen = dataValue == 'open' ? true : false;
+
+      if (data.length) {
+        output += '<ul id="' + rootId + '" class="sortableLists list-unstyled">';
+        output += buildNestedList(data, isOpen);
+        output += '</ul>';
+      } else {
+          output += 'No Data';
+      }
+
+
+      $(target).hide().html(output).fadeIn();
+      $('.sortableLists').sortableLists( options );
+    }
+
+    function buildNestedList(data, isOpen) {
+      var output = '';
+      for (var i in data) {
+        item = data[i];
+        var itemId = item['id'];
+        var itemTitle = item['title'];
+        var itemIsLocked = item['is_locked'];
+        var itemIsLockedLabel = (itemIsLocked == 1) ? 'true' : 'false';
+        var itemIsLockedClass = (itemIsLocked == 1) ? 'btn-danger' : 'btn-success';
+        var itemIsLockedIcon = (itemIsLocked == 1) ? 'fa-lock' : 'fa-lock-open';
+        var isOpenClass = isOpen ? 'sortableListsOpen' : 'sortableListsClose';
+        var icon = sectionIcons[item['icon']] ? sectionIcons[item['icon']] : '';
+
+        output += `
+          <li id="item-${itemId}"
+            data-value="${itemTitle}"
+            data-is-locked="${itemIsLockedLabel}"
+            class="${isOpenClass}">
+            <div>
+              <span class="mb-2 d-block">
+                ${icon}
+                <span>${itemTitle}</span>
+
+                <div class="d-inline-block float-right">
+                  <button class="btn btn-sm ${itemIsLockedClass} clickable"
+                    data-action="toggle-lock-section"
+                    data-id="${itemId}">
+                    Lock
+                  </button>
+                  <button class="btn btn-sm ${itemIsLockedClass} clickable">
+                    <i class="fa ${itemIsLockedIcon}"></i>
+                  </button>
+                </div>
+
+              </span>
+            </div>
+        `;
+
+        if (item['children'].length > 0) {
+          output +=  `<ul class="list-unstyled">`;
+          itemChildren = item['children'];
+          output += buildNestedList(itemChildren, isOpen);
+          output += '</ul>';
+        }
+
+        output += `</li>`;
+      }
+
+      return output;
+    }
+
+    buildList(data, '#myListContainer', 'myList');
+
+    $('#toArrBtn').on('click', function(){ console.log($('.sortableLists').sortableListsToArray()); });
+    $('#toHierBtn').on('click', function() { console.log($('.sortableLists').sortableListsToHierarchy()); });
+    $('#toStrBtn').on('click', function() { console.log($('.sortableLists').sortableListsToString()); });
+
+
+  </script>
+  <script>
+    let includeTags = document.getElementsByTagName("include");
+
+    for (let tags of includeTags) {
+      fetch(tags.attributes["src"].value /*, options */)
+      .then((response) => response.text())
+      .then((html) => {
+        tags.innerHTML = html;
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+    }
+  </script>
+</body>
+</html>
