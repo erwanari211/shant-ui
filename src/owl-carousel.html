@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link rel="icon" type="image/ico" href="./img/favicon.ico" sizes="any" />
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- styles required by this view-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+      .item {
+        height: 10rem;
+        background: #4DC7A0;
+        padding: 1rem;
+      }
+
+      .item.item-video {
+        padding: 0;
+      }
+
+
+      /* navigation */
+      .custom-owl-container {
+        position: relative;
+      }
+      .custom-owl-container .owl-theme .custom-nav {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+      }
+      .custom-owl-container .owl-theme .custom-nav .owl-prev,
+      .custom-owl-container .owl-theme .custom-nav .owl-next {
+        position: absolute;
+        height: 100px;
+        color: inherit;
+        background: none;
+        border: none;
+        z-index: 100;
+      }
+      .custom-owl-container .owl-theme .custom-nav .owl-prev i,
+      .custom-owl-container .owl-theme .custom-nav .owl-next i {
+        font-size: 2.5rem;
+        color: #cecece;
+      }
+      .custom-owl-container .owl-theme .custom-nav .owl-prev {
+        left: 0;
+      }
+      .custom-owl-container .owl-theme .custom-nav .owl-next {
+        right: 0;
+      }
+
+
+
+    </style>
+
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <include src="partials/header.html"></include>
+    <div class="app-body">
+      <include src="partials/sidebar.html"></include>
+      <main class="main">
+        <include src="partials/breadcrumb.html"></include>
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="custom-owl-container">
+                          <div class="owl-carousel owl-theme">
+                            <div class="item"><h4>1</h4></div>
+                            <div class="item"><h4>2</h4></div>
+                            <div class="item"><h4>3</h4></div>
+                            <div class="item"><h4>4</h4></div>
+                            <div class="item item-video" data-merge="2">
+                              <a class="owl-video" href="https://www.youtube.com/watch?v=PHgc8Q6qTjc"></a>
+                            </div>
+                            <div class="item"><h4>6</h4></div>
+                            <div class="item"><h4>7</h4></div>
+                            <div class="item"><h4>8</h4></div>
+                            <div class="item"><h4>9</h4></div>
+                            <div class="item"><h4>10</h4></div>
+                            <div class="item"><h4>11</h4></div>
+                            <div class="item"><h4>12</h4></div>
+                            <div class="item"><h4>13</h4></div>
+                            <div class="item">
+                              <h4>14</h4>
+                              <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
+                            </div>
+                            <div class="item">
+                              <h4>15</h4>
+                            </div>
+                          </div>
+                          <div class="owl-theme">
+                            <div class="owl-controls">
+                              <div class="owl-nav custom-nav"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->
+          </div>
+        </div>
+      </main>
+      <include src="partials/aside.html"></include>
+    </div>
+    <include src="partials/footer.html"></include>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+          nav:true,
+
+          margin:10,
+          loop:true,
+          center: false,
+
+          stagePadding: 50,
+          lazyLoad:false,
+
+          // autoWidth:true,
+
+          responsiveClass:true,
+          responsive:{
+            0:{
+              items:1,
+              nav:true
+            },
+            600:{
+              items:3,
+              nav:false
+            },
+            1000:{
+              items:5,
+              nav:true,
+              // loop:false
+            }
+          },
+
+          video:true,
+          autoplay:false,
+          autoplayTimeout:2000,
+          autoplayHoverPause:true,
+
+          autoHeight:true,
+
+          navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+          navContainer: '.custom-owl-container .custom-nav',
+          dotsClass: 'owl-dots mt-2'
+
+
+        });
+      });
+    </script>
+
+    <script>
+      let includeTags = document.getElementsByTagName("include");
+
+      for (let tags of includeTags) {
+        fetch(tags.attributes["src"].value /*, options */)
+          .then((response) => response.text())
+          .then((html) => {
+            tags.innerHTML = html;
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+    </script>
+  </body>
+</html>
